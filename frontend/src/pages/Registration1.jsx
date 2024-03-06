@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 const Registration1 = () => {
-  const registration = "http://localhost:3000/register";
+  const registration =
+    "http://ec2-52-64-215-251.ap-southeast-2.compute.amazonaws.com/register";
   const options = [
     {
       content: "Day-1 (Introduction to Cybersecurity and Bug bounty)",
