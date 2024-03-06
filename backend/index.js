@@ -5,7 +5,12 @@ const User = require("./model/User");
 const app = express();
 app.use(cors());
 app.use(express.json());
-const port = 5173;
+
+app.use(express.static("public"));
+app.use("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "/public/index.html"));
+});
+const port = 3000;
 app.get("/", (req, res) => {
   res.json({
     message: "kire heda ki khbor tobor",
