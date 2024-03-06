@@ -5,7 +5,7 @@ const User = require("./model/User");
 const app = express();
 app.use(cors());
 app.use(express.json());
-const port = 3000;
+const port = 5173;
 app.get("/", (req, res) => {
   res.json({
     message: "kire heda ki khbor tobor",
@@ -32,5 +32,5 @@ app.post("/register", async (req, res) => {
 });
 app.listen(port, async () => {
   await dbConnect();
-  console.table("the server has started to listen on port 3000");
+  console.table(`the server has started to listen on port ${port}`);
 });
