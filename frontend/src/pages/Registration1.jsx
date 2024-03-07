@@ -187,6 +187,7 @@ const Registration1 = () => {
                   registration: RegistrationNumber,
                   event: options[selected].content,
                   techtalk: availed,
+                  amount: 500,
                 };
                 buyCourse(mybody, navigate);
               }}

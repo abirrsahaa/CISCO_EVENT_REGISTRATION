@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { buyCourse } from "../components/service";
 
 const Registration2 = () => {
   const options1 = [
@@ -164,7 +165,20 @@ const Registration2 = () => {
               <span className="text-black text-[32px] font-bold">$xxx</span>
             </div>
             <button
-              onClick={submithandler}
+              onClick={() => {
+                // appply zod validation here and only after that send the details to the backend
+                const mybody = {
+                  username: Username,
+                  email: Email,
+                  phone: PhoneNumber,
+                  registration: RegistrationNumber,
+                  event1: options1[selected1].content,
+                  event2: options2[selected2].content,
+                  techtalk: availed,
+                  amount: 500,
+                };
+                buyCourse(mybody);
+              }}
               className="bg-black rounded-3xl w-[40%] h-[50%] text-white flex items-center justify-center font-bold text-[18px]"
             >
               Register

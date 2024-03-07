@@ -3,8 +3,8 @@ import { toast } from "react-hot-toast";
 import { apiConnector } from "./apiconnector";
 import cisco from "./CiscoLogo101.png";
 
-const COURSE_PAYMENT_API = "https://cisco-payments.sabal.in/capturePayment";
-const COURSE_VERIFY_API = "https://cisco-payments.sabal.in/verifyPayment";
+const COURSE_PAYMENT_API = "http://localhost:3000/capturePayment";
+const COURSE_VERIFY_API = "http://localhost:3000/verifyPayment";
 
 function loadScript(src) {
   return new Promise((resolve) => {

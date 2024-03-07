@@ -7,9 +7,13 @@ exports.capturePayment = async (req, res) => {
 
   console.log("inside capture payment backend");
 
-  // const { username, email, phone, registration, event, techtalk } = req.body;
+  const { username, email, phone, registration, event, techtalk, amount } =
+    req.body;
 
-  let totalAmount = 500;
+  console.log("the req body is ", req.body);
+  console.log("the amount is ", amount);
+
+  let totalAmount = req.body.mybody.amount;
 
   const currency = "INR";
   const options = {
@@ -63,6 +67,8 @@ exports.verifyPayment = async (req, res) => {
       phone: req.body.mybody.phone,
       registration: req.body.mybody.registration,
       event: req.body.mybody.event,
+      event1: req.body.mybody.event1,
+      event2: req.body.mybody.event2,
       techtalk: req.body.mybody.techtalk,
       razorpay_order_id: razorpay_order_id,
       razorpay_payment_id: razorpay_payment_id,
