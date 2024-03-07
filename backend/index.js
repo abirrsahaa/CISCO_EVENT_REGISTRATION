@@ -13,10 +13,10 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-// app.use(express.static("public"));
-// app.use("/*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "/public/index.html"));
-// });
+app.use(express.static("public"));
+app.use("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "/public/index.html"));
+});
 const port = 3000;
 
 app.post("/register", async (req, res) => {
