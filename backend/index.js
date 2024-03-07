@@ -2,20 +2,29 @@ const { capturePayment } = require("./controllers/Payments");
 
 const { verifyPayment } = require("./controllers/Payments");
 
+const corsOptions = {
+  origin: "http://localhost:5173", // Replace with your frontend URL
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, // Enable cookies, authorization headers, etc.
+  optionsSuccessStatus: 204, // Respond with a 204 status code for preflight requests
+};
+
 const express = require("express");
 const cors = require("cors");
 const dbConnect = require("./db/index");
 const User = require("./model/User");
 const app = express();
-app.use(cors());
+app.use(cors(corsOptions));
+
 app.use(express.json());
 const dotenv = require("dotenv");
 
 dotenv.config();
 
 app.use(express.static("public"));
-app.use("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/public/index.html"));
+app.get("/*", (req, res) => {
+  const filePath = path.join(__dirname, "public", "index.html");
+  res.sendFile(filePath);
 });
 const port = 3000;
 
