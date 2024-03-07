@@ -4,19 +4,18 @@ const UserSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
-    unique: true,
   },
   email: {
     type: String,
     required: true,
     unique: true,
   },
-  phoneNumber: {
+  phone: {
     type: String,
     required: true,
     unique: true,
   },
-  RegistrationNumber: {
+  registration: {
     type: String,
     required: true,
     unique: true,
@@ -32,6 +31,12 @@ const UserSchema = new mongoose.Schema({
   },
   techtalk: {
     type: Boolean,
+  },
+  razorpay_order_id: {
+    type: String,
+  },
+  razorpay_payment_id: {
+    type: String,
   },
 });
 

@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 
+import { useNavigate } from "react-router-dom";
+
+import { buyCourse } from "../components/service";
 const Registration1 = () => {
-  const registration =
-    "http://ec2-52-64-215-251.ap-southeast-2.compute.amazonaws.com/register";
+  const navigate = useNavigate();
+  // const registration = "http://localhost:3000/register";
   const options = [
     {
       content: "Day-1 (Introduction to Cybersecurity and Bug bounty)",
@@ -174,7 +178,18 @@ const Registration1 = () => {
               <span className="text-black text-[32px] font-bold">$xxx</span>
             </div>
             <button
-              onClick={signupHandler}
+              onClick={() => {
+                // appply zod validation here and only after that send the details to the backend
+                const mybody = {
+                  username: Username,
+                  email: Email,
+                  phone: PhoneNumber,
+                  registration: RegistrationNumber,
+                  event: options[selected].content,
+                  techtalk: availed,
+                };
+                buyCourse(mybody, navigate);
+              }}
               className="bg-black rounded-3xl w-[40%] h-[50%] text-white flex items-center justify-center font-bold text-[18px]"
             >
               Register

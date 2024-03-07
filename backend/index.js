@@ -1,3 +1,7 @@
+const { capturePayment } = require("./controllers/Payments");
+
+const { verifyPayment } = require("./controllers/Payments");
+
 const express = require("express");
 const cors = require("cors");
 const dbConnect = require("./db/index");
@@ -5,11 +9,14 @@ const User = require("./model/User");
 const app = express();
 app.use(cors());
 app.use(express.json());
+const dotenv = require("dotenv");
 
-app.use(express.static("public"));
-app.use("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/public/index.html"));
-});
+dotenv.config();
+
+// app.use(express.static("public"));
+// app.use("/*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "/public/index.html"));
+// });
 const port = 3000;
 app.get("/", (req, res) => {
   res.json({
@@ -35,6 +42,9 @@ app.post("/register", async (req, res) => {
     res.json({ error: error.message });
   }
 });
+
+app.post("/capturePayment", capturePayment);
+app.post("/verifyPayment", verifyPayment);
 app.listen(port, async () => {
   await dbConnect();
   console.table(`the server has started to listen on port ${port}`);
