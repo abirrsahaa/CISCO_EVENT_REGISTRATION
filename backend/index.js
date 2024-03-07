@@ -18,11 +18,7 @@ dotenv.config();
 //   res.sendFile(path.join(__dirname, "/public/index.html"));
 // });
 const port = 3000;
-app.get("/", (req, res) => {
-  res.json({
-    message: "kire heda ki khbor tobor",
-  });
-});
+
 app.post("/register", async (req, res) => {
   console.log("the req", req);
 
