@@ -354,6 +354,7 @@ const Registration1 = () => {
                     return;
                   }
                   console.log("parsedInput", parsedInput);
+                  const amount = 400;
                   const {
                     username,
                     phone,
@@ -369,7 +370,8 @@ const Registration1 = () => {
                     email,
                     event,
                     techtalk,
-                    amount: 400,
+                    amount: amount,
+                    option: 1,
                   };
                 } catch (err) {
                   console.log("zod error received in catch ", err);

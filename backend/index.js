@@ -3,6 +3,7 @@ const { capturePayment } = require("./controllers/Payments");
 const { verifyPayment } = require("./controllers/Payments");
 
 const { checking } = require("./controllers/checking");
+const { sendPaymentSuccessEmail } = require("./controllers/Payments");
 
 const corsOptions = {
   origin: "http://localhost:5173", // Replace with your frontend URL
@@ -52,6 +53,7 @@ app.post("/register", async (req, res) => {
 
 app.post("/capturePayment", capturePayment);
 app.post("/verifyPayment", verifyPayment);
+app.post("/sendPaymentSuccessEmail", sendPaymentSuccessEmail);
 app.post("/checking", checking);
 app.listen(port, async () => {
   await dbConnect();

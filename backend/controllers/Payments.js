@@ -1,6 +1,8 @@
 const { instance } = require("./Razorpay");
 const { mongoose } = require("mongoose");
 const User = require("../model/User");
+const { paymentSuccessEmail } = require("../utils/paymentSuccessful");
+const mailSender = require("../utils/mailsender");
 
 exports.capturePayment = async (req, res) => {
   // body ami bair korum nijer mone koira
@@ -13,7 +15,22 @@ exports.capturePayment = async (req, res) => {
   console.log("the req body is ", req.body);
   console.log("the amount is ", amount);
 
-  let totalAmount = req.body.mybody.amount;
+  const totalAmount = req.body.mybody.amount;
+  const option = req.body.mybody.option;
+  if (option !== 1 && totalAmount !== 400) {
+    console.log("laude paisa nahi badalna");
+    return;
+  }
+
+  if (option !== 2 && totalAmount !== 500) {
+    console.log("laude paisa nahi badalna");
+    return;
+  }
+
+  if (option !== 3 && totalAmount !== 1000) {
+    console.log("laude paisa nahi badalna");
+    return;
+  }
 
   const currency = "INR";
   const options = {
@@ -80,4 +97,42 @@ exports.verifyPayment = async (req, res) => {
       .json({ success: true, message: "Payment Verified", user });
   }
   return res.status(200).json({ success: "false", message: "Payment Failed" });
+};
+
+exports.sendPaymentSuccessEmail = async (req, res) => {
+  const { orderId, paymentId, amount } = req.body;
+  console.log(req.body);
+
+  // const userId = req.user.id;
+
+  if (!orderId || !paymentId || !amount) {
+    return res
+      .status(400)
+      .json({ success: false, message: "Please provide all the fields" });
+  }
+
+  try {
+    //student ko dhundo
+    // const enrolledStudent = await User.findById(userId);
+    await mailSender(
+      req.body.mybody.email,
+      `Payment Recieved`,
+      paymentSuccessEmail(
+        `${req.body.mybody.username}`,
+        `${req.body.mybody.event}`,
+        `${req.body.mybody.event1}`,
+        `${req.body.mybody.event2}`,
+        `${req.body.mybody.registration}`,
+        `${req.body.mybody.techtalk}`,
+        amount / 100,
+        orderId,
+        paymentId
+      )
+    );
+  } catch (error) {
+    console.log("error in sending mail", error);
+    return res
+      .status(500)
+      .json({ success: false, message: "Could not send email" });
+  }
 };

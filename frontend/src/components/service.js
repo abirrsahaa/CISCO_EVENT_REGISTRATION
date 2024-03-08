@@ -3,11 +3,15 @@ import { toast } from "react-hot-toast";
 import { apiConnector } from "./apiconnector";
 import cisco from "./CiscoLogo101.png";
 
-// const COURSE_PAYMENT_API = "https://cisco-payments.sabal.in/capturePayment";
-// const COURSE_VERIFY_API = "https://cisco-payments.sabal.in/verifyPayment";
+const COURSE_PAYMENT_API = "https://cisco-payments.sabal.in/capturePayment";
+const COURSE_VERIFY_API = "https://cisco-payments.sabal.in/verifyPayment";
+const SEND_PAYMENT_SUCCESS_EMAIL_API =
+  "https://cisco-payments.sabal.in/sendPaymentSuccessEmail";
 
-const COURSE_PAYMENT_API = "http://localhost:3000/capturePayment";
-const COURSE_VERIFY_API = "http://localhost:3000/verifyPayment";
+// const COURSE_PAYMENT_API = "http://localhost:3000/capturePayment";
+// const COURSE_VERIFY_API = "http://localhost:3000/verifyPayment";
+// const SEND_PAYMENT_SUCCESS_EMAIL_API =
+//   "http://localhost:3000/sendPaymentSuccessEmail";
 
 function loadScript(src) {
   return new Promise((resolve) => {
@@ -46,6 +50,11 @@ export async function buyCourse(mybody, navigate) {
     if (!orderResponse.data.success) {
       throw new Error(orderResponse.data.message);
     }
+
+    if (orderResponse.data.message.amount != mybody.amount) {
+      console.log("paiso ke sath bakchodi nahi ");
+      return;
+    }
     console.log("PRINTING orderResponse", orderResponse);
     //options
     const options = {
@@ -62,6 +71,11 @@ export async function buyCourse(mybody, navigate) {
       },
       handler: function (response) {
         //send successful wala mail
+        sendPaymentSuccessEmail(
+          response,
+          orderResponse.data.message.amount,
+          mybody
+        );
 
         //verifyPayment
         verifyPayment({ ...response, mybody }, navigate);
@@ -103,4 +117,18 @@ async function verifyPayment(bodyData, navigate) {
   }
   toast.dismiss(toastId);
   //   dispatch(setPaymentLoading(false));
+}
+
+// email
+async function sendPaymentSuccessEmail(response, amount, mybody) {
+  try {
+    await apiConnector("POST", SEND_PAYMENT_SUCCESS_EMAIL_API, {
+      orderId: response.razorpay_order_id,
+      paymentId: response.razorpay_payment_id,
+      amount,
+      mybody,
+    });
+  } catch (error) {
+    console.log("PAYMENT SUCCESS EMAIL ERROR....", error);
+  }
 }
