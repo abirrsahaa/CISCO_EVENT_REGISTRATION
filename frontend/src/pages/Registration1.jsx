@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
+import { z } from "zod";
 
 import { useNavigate } from "react-router-dom";
 
 import { buyCourse } from "../components/service";
+
 const Registration1 = () => {
   const navigate = useNavigate();
   // const registration = "http://localhost:3000/register";
@@ -178,8 +180,61 @@ const Registration1 = () => {
               <span className="text-black text-[32px] font-bold">$xxx</span>
             </div>
             <button
-              onClick={() => {
+              onClick={async () => {
                 // appply zod validation here and only after that send the details to the backend
+                const userSchema = z.object({
+                  // Define the same schema as on the server side
+                  username: z.string().min(2).max(40),
+                  phone: z.string().min(10).max(10),
+                  registration: z.string().min(8).max(8),
+                  email: z.string().email(),
+                  event: z.string().optional(),
+                  event1: z.string().optional(),
+                  event2: z.string().optional(),
+                  techtalk: z.boolean(),
+                });
+
+                // first here db call to check whether same username or email already exists or not or even registration number ??
+                // i dont want my backend to crash at this moment
+                // need to hit a url which will let me know success or false !
+                // const existing = await User.findOne({
+                //   $or: [{ username }, { email }],
+                // });
+
+                const dbPresent = async () => {
+                  console.log("inside dbPresent");
+                  const status = await fetch("http://localhost:3000/checking", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                      username: Username,
+                      email: Email,
+                      phone: PhoneNumber,
+                      registration: RegistrationNumber,
+                      event: options[selected].content,
+                      techtalk: availed,
+                    }),
+                  });
+                  const response = await status.json();
+                  console.log("the response is ", response);
+                  if (response.success === false) {
+                    console.log(
+                      "the details you provided  already exists please change the details and try again"
+                    );
+                    // set the error message here
+                    return false;
+                  }
+                  return true;
+                };
+
+                const isPresent = await dbPresent();
+                if (!isPresent) {
+                  console.log("the user already exists");
+                  return;
+                }
+
                 const mybody = {
                   username: Username,
                   email: Email,
@@ -187,9 +242,40 @@ const Registration1 = () => {
                   registration: RegistrationNumber,
                   event: options[selected].content,
                   techtalk: availed,
-                  amount: 500,
+                  // amount: 500,
                 };
-                buyCourse(mybody, navigate);
+                let finalBody;
+                try {
+                  let parsedInput = userSchema.safeParse(mybody);
+                  if (!parsedInput.success) {
+                    // return res.status(411).json({ Zod_error: parsedInput.error });
+                    // set error to display the error message
+                    console.log("zod error", parsedInput.error);
+                    return;
+                  }
+                  console.log("parsedInput", parsedInput);
+                  const {
+                    username,
+                    phone,
+                    registration,
+                    email,
+                    event,
+                    techtalk,
+                  } = parsedInput.data;
+                  finalBody = {
+                    username,
+                    phone,
+                    registration,
+                    email,
+                    event,
+                    techtalk,
+                    amount: 500,
+                  };
+                } catch (err) {
+                  console.log("zod error received in catch ", err);
+                  return;
+                }
+                buyCourse(finalBody, navigate);
               }}
               className="bg-black rounded-3xl w-[40%] h-[50%] text-white flex items-center justify-center font-bold text-[18px]"
             >

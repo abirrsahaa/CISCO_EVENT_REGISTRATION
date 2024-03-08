@@ -2,6 +2,8 @@ const { capturePayment } = require("./controllers/Payments");
 
 const { verifyPayment } = require("./controllers/Payments");
 
+const { checking } = require("./controllers/checking");
+
 const corsOptions = {
   origin: "http://localhost:5173", // Replace with your frontend URL
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
@@ -50,6 +52,7 @@ app.post("/register", async (req, res) => {
 
 app.post("/capturePayment", capturePayment);
 app.post("/verifyPayment", verifyPayment);
+app.post("/checking", checking);
 app.listen(port, async () => {
   await dbConnect();
   console.table(`the server has started to listen on port ${port}`);
