@@ -7,6 +7,15 @@ import { useNavigate } from "react-router-dom";
 import { buyCourse } from "../components/service";
 
 const Registration1 = () => {
+  const [dberror, setdberror] = useState(null);
+  // const [zoderror, setzoderror] = useState(null);
+  const [usernameError, setUsernameError] = useState(null);
+  const [phoneError, setPhoneNumberError] = useState(null);
+  const [registrationError, setRegistrationNumberError] = useState(null);
+  const [emailError, setEmailError] = useState(null);
+  const [eventError, setEventError] = useState(null);
+  const [techtalkError, setTechtalkError] = useState(null);
+
   const navigate = useNavigate();
   // const registration = "http://localhost:3000/register";
   const options = [
@@ -98,7 +107,7 @@ const Registration1 = () => {
           <div className="md:w-[416.89px] md:h-[315.23px] ">
             <div className="w-full h-[40%]  flex justify-center items-center">
               <div className="w-[50%] h-full  flex flex-col items-center justify-center">
-                <div className="w-full h-[50%]  flex items-center justify-center">
+                <div className="w-full h-[50%]  flex flex-col gap-1 items-center justify-center">
                   <input
                     type="text"
                     value={Username}
@@ -107,7 +116,7 @@ const Registration1 = () => {
                     className="w-[95%] h-[40px] bg-white border-b-2 text-black  border-black  p-2"
                   />
                 </div>
-                <div className="w-full h-[50%]  flex items-center justify-center ">
+                <div className="w-full h-[50%]  flex flex-col gap-1 items-center justify-center ">
                   <input
                     type="text"
                     value={PhoneNumber}
@@ -118,7 +127,7 @@ const Registration1 = () => {
                 </div>
               </div>
               <div className="w-[50%] h-full  flex flex-col items-center justify-center">
-                <div className="w-full h-[50%]  flex items-center justify-center">
+                <div className="w-full h-[50%]  flex flex-col gap-1 items-center justify-center">
                   <input
                     type="text"
                     value={RegistrationNumber}
@@ -127,7 +136,7 @@ const Registration1 = () => {
                     className="w-[95%] h-[40px] bg-white border-b-2  border-black text-black  p-2"
                   />
                 </div>
-                <div className="w-full h-[50%] bg-white  flex items-center justify-center">
+                <div className="w-full h-[50%] bg-white  flex flex-col gap-1 items-center justify-center">
                   <input
                     type="text"
                     value={Email}
@@ -172,6 +181,24 @@ const Registration1 = () => {
                   Get access to all the tech talks
                 </label>
               </div>
+              {dberror && <p className="text-red-500">{dberror}</p>}
+              {eventError && (
+                <p className="text-red-500 text-sm">{eventError}</p>
+              )}
+              {registrationError && (
+                <p className="text-red-500 text-sm leading-none">
+                  {registrationError}
+                </p>
+              )}
+              {phoneError && (
+                <p className="text-red-500 text-sm">{phoneError}</p>
+              )}
+              {usernameError && (
+                <p className="text-red-500 text-sm">{usernameError}</p>
+              )}
+              {emailError && (
+                <p className="text-red-500 text-sm">{emailError}</p>
+              )}
             </div>
           </div>
           <div className="w-[90%] flex px-3 justify-between items-center h-[15%] absolute bottom-3 ">
@@ -181,12 +208,31 @@ const Registration1 = () => {
             </div>
             <button
               onClick={async () => {
+                setUsernameError(null);
+                setPhoneNumberError(null);
+                setRegistrationNumberError(null);
+                setEmailError(null);
+                setEventError(null);
+                setTechtalkError(null);
+                setdberror(null);
+
                 // appply zod validation here and only after that send the details to the backend
                 const userSchema = z.object({
                   // Define the same schema as on the server side
                   username: z.string().min(2).max(40),
-                  phone: z.string().min(10).max(10),
-                  registration: z.string().min(8).max(8),
+                  phone: z
+                    .string()
+                    .min(10, {
+                      message: "phone must contain only 10 character(s)",
+                    })
+                    .max(10),
+
+                  registration: z
+                    .string()
+                    .min(8, {
+                      message: "registration must contain only 8 character(s)",
+                    })
+                    .max(8),
                   email: z.string().email(),
                   event: z.string().optional(),
                   event1: z.string().optional(),
@@ -200,6 +246,11 @@ const Registration1 = () => {
                 // const existing = await User.findOne({
                 //   $or: [{ username }, { email }],
                 // });
+
+                if (selected == null) {
+                  setEventError("Please select an event");
+                  return;
+                }
 
                 const dbPresent = async () => {
                   console.log("inside dbPresent");
@@ -220,6 +271,9 @@ const Registration1 = () => {
                   const response = await status.json();
                   console.log("the response is ", response);
                   if (response.success === false) {
+                    setdberror(
+                      "the details you provided  already exists please change the details and try again"
+                    );
                     console.log(
                       "the details you provided  already exists please change the details and try again"
                     );
@@ -251,6 +305,48 @@ const Registration1 = () => {
                     // return res.status(411).json({ Zod_error: parsedInput.error });
                     // set error to display the error message
                     console.log("zod error", parsedInput.error);
+                    console.log(
+                      "the error message is ",
+                      parsedInput.error.errors
+                    );
+
+                    for (let i in parsedInput.error.errors) {
+                      // console.log(i);
+                      console.log(
+                        "the error message is ",
+                        parsedInput.error.errors[i].message
+                      );
+                      console.log(
+                        "the error path is ",
+                        parsedInput.error.errors[i].path[0]
+                      );
+                      if (parsedInput.error.errors[i].path[0] === "username") {
+                        setUsernameError(parsedInput.error.errors[i].message);
+                      }
+                      if (parsedInput.error.errors[i].path[0] === "phone") {
+                        setPhoneNumberError(
+                          parsedInput.error.errors[i].message
+                        );
+                      }
+                      if (
+                        parsedInput.error.errors[i].path[0] === "registration"
+                      ) {
+                        setRegistrationNumberError(
+                          parsedInput.error.errors[i].message
+                        );
+                      }
+                      if (parsedInput.error.errors[i].path[0] === "email") {
+                        setEmailError(parsedInput.error.errors[i].message);
+                      }
+
+                      if (parsedInput.error.errors[i].path[0] === "techtalk") {
+                        setTechtalkError(parsedInput.error.errors[i].message);
+                      }
+                    }
+                    // for (let i in parsedInput.error.ZodError[0].path) {
+                    //   console.log(i);
+                    // }
+                    // console.log("the error message is ", parsedInput.error[0]);
                     return;
                   }
                   console.log("parsedInput", parsedInput);
@@ -269,7 +365,7 @@ const Registration1 = () => {
                     email,
                     event,
                     techtalk,
-                    amount: 500,
+                    amount: 400,
                   };
                 } catch (err) {
                   console.log("zod error received in catch ", err);

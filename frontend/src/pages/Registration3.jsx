@@ -1,7 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { buyCourse } from "../components/service";
+import { z } from "zod";
 
 const Registration3 = () => {
+  const [dberror, setdberror] = useState(null);
+  // const [zoderror, setzoderror] = useState(null);
+  const [usernameError, setUsernameError] = useState(null);
+  const [phoneError, setPhoneNumberError] = useState(null);
+  const [registrationError, setRegistrationNumberError] = useState(null);
+  const [emailError, setEmailError] = useState(null);
+  const [event1Error, setEvent1Error] = useState(null);
+  const [event2Error, setEvent2Error] = useState(null);
+  const [techtalkError, setTechtalkError] = useState(null);
   const options1 = [
     {
       content: "Day-1 (Introduction to Cybersecurity and Bug bounty)",
@@ -157,6 +167,27 @@ const Registration3 = () => {
                   Get access to all the tech talks
                 </label>
               </div>
+              {dberror && <p className="text-red-500">{dberror}</p>}
+              {event1Error && (
+                <p className="text-red-500 text-sm">{event1Error}</p>
+              )}
+              {event2Error && (
+                <p className="text-red-500 text-sm">{event2Error}</p>
+              )}
+              {registrationError && (
+                <p className="text-red-500 text-sm leading-none">
+                  {registrationError}
+                </p>
+              )}
+              {phoneError && (
+                <p className="text-red-500 text-sm">{phoneError}</p>
+              )}
+              {usernameError && (
+                <p className="text-red-500 text-sm">{usernameError}</p>
+              )}
+              {emailError && (
+                <p className="text-red-500 text-sm">{emailError}</p>
+              )}
             </div>
           </div>
           <div className="w-[90%] flex px-3 justify-between items-center h-[15%] absolute bottom-3 ">
@@ -165,8 +196,95 @@ const Registration3 = () => {
               <span className="text-black text-[32px] font-bold">$xxx</span>
             </div>
             <button
-              onClick={() => {
+              onClick={async () => {
+                setUsernameError(null);
+                setPhoneNumberError(null);
+                setRegistrationNumberError(null);
+                setEmailError(null);
+                setEvent1Error(null);
+                setEvent2Error(null);
+                setTechtalkError(null);
+                setdberror(null);
+
                 // appply zod validation here and only after that send the details to the backend
+                const userSchema = z.object({
+                  // Define the same schema as on the server side
+                  username: z.string().min(2).max(40),
+                  phone: z
+                    .string()
+                    .min(10, {
+                      message: "phone must contain only 10 character(s)",
+                    })
+                    .max(10),
+
+                  registration: z
+                    .string()
+                    .min(8, {
+                      message: "registration must contain only 8 character(s)",
+                    })
+                    .max(8),
+                  email: z.string().email(),
+                  event: z.string().optional(),
+                  event1: z.string().optional(),
+                  event2: z.string().optional(),
+                  techtalk: z.boolean(),
+                });
+
+                // first here db call to check whether same username or email already exists or not or even registration number ??
+                // i dont want my backend to crash at this moment
+                // need to hit a url which will let me know success or false !
+                // const existing = await User.findOne({
+                //   $or: [{ username }, { email }],
+                // });
+
+                if (selected1 == null) {
+                  setEvent1Error("Please select an event from day 1");
+                  return;
+                }
+
+                if (selected2 == null) {
+                  setEvent1Error("Please select an event from day 2");
+                  return;
+                }
+
+                const dbPresent = async () => {
+                  console.log("inside dbPresent");
+                  const status = await fetch("http://localhost:3000/checking", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                      username: Username,
+                      email: Email,
+                      phone: PhoneNumber,
+                      registration: RegistrationNumber,
+                      event1: options1[selected1].content,
+                      event2: options2[selected2].content,
+                      techtalk: availed,
+                    }),
+                  });
+                  const response = await status.json();
+                  console.log("the response is ", response);
+                  if (response.success === false) {
+                    setdberror(
+                      "the details you provided  already exists please change the details and try again"
+                    );
+                    console.log(
+                      "the details you provided  already exists please change the details and try again"
+                    );
+                    // set the error message here
+                    return false;
+                  }
+                  return true;
+                };
+
+                const isPresent = await dbPresent();
+                if (!isPresent) {
+                  console.log("the user already exists");
+                  return;
+                }
+
                 const mybody = {
                   username: Username,
                   email: Email,
@@ -175,9 +293,84 @@ const Registration3 = () => {
                   event1: options1[selected1].content,
                   event2: options2[selected2].content,
                   techtalk: availed,
-                  amount: 1000,
+                  // amount: 500,
                 };
-                buyCourse(mybody);
+                let finalBody;
+                try {
+                  let parsedInput = userSchema.safeParse(mybody);
+                  if (!parsedInput.success) {
+                    // return res.status(411).json({ Zod_error: parsedInput.error });
+                    // set error to display the error message
+                    console.log("zod error", parsedInput.error);
+                    console.log(
+                      "the error message is ",
+                      parsedInput.error.errors
+                    );
+
+                    for (let i in parsedInput.error.errors) {
+                      // console.log(i);
+                      console.log(
+                        "the error message is ",
+                        parsedInput.error.errors[i].message
+                      );
+                      console.log(
+                        "the error path is ",
+                        parsedInput.error.errors[i].path[0]
+                      );
+                      if (parsedInput.error.errors[i].path[0] === "username") {
+                        setUsernameError(parsedInput.error.errors[i].message);
+                      }
+                      if (parsedInput.error.errors[i].path[0] === "phone") {
+                        setPhoneNumberError(
+                          parsedInput.error.errors[i].message
+                        );
+                      }
+                      if (
+                        parsedInput.error.errors[i].path[0] === "registration"
+                      ) {
+                        setRegistrationNumberError(
+                          parsedInput.error.errors[i].message
+                        );
+                      }
+                      if (parsedInput.error.errors[i].path[0] === "email") {
+                        setEmailError(parsedInput.error.errors[i].message);
+                      }
+
+                      if (parsedInput.error.errors[i].path[0] === "techtalk") {
+                        setTechtalkError(parsedInput.error.errors[i].message);
+                      }
+                    }
+                    // for (let i in parsedInput.error.ZodError[0].path) {
+                    //   console.log(i);
+                    // }
+                    // console.log("the error message is ", parsedInput.error[0]);
+                    return;
+                  }
+                  console.log("parsedInput", parsedInput);
+                  const {
+                    username,
+                    phone,
+                    registration,
+                    email,
+                    event1,
+                    event2,
+                    techtalk,
+                  } = parsedInput.data;
+                  finalBody = {
+                    username,
+                    phone,
+                    registration,
+                    email,
+                    event1,
+                    event2,
+                    techtalk,
+                    amount: 500,
+                  };
+                } catch (err) {
+                  console.log("zod error received in catch ", err);
+                  return;
+                }
+                buyCourse(finalBody);
               }}
               className="bg-black rounded-3xl w-[40%] h-[50%] text-white flex items-center justify-center font-bold text-[18px]"
             >
