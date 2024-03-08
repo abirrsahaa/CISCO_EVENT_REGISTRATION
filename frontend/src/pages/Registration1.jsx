@@ -44,6 +44,8 @@ const Registration1 = () => {
     console.log("the availed option is ", availed);
   }, [selected, availed]);
 
+  const checking_api = "https://cisco-payments.sabal.in/checking";
+
   const signupHandler = async () => {
     const user = {
       Username,
@@ -258,7 +260,7 @@ const Registration1 = () => {
 
                 const dbPresent = async () => {
                   console.log("inside dbPresent");
-                  const status = await fetch("http://localhost:3000/checking", {
+                  const status = await fetch(checking_api, {
                     method: "POST",
                     headers: {
                       "Content-Type": "application/json",
