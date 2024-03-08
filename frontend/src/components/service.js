@@ -3,15 +3,15 @@ import { toast } from "react-hot-toast";
 import { apiConnector } from "./apiconnector";
 import cisco from "./CiscoLogo101.png";
 
-const COURSE_PAYMENT_API = "https://cisco-payments.sabal.in/capturePayment";
-const COURSE_VERIFY_API = "https://cisco-payments.sabal.in/verifyPayment";
-const SEND_PAYMENT_SUCCESS_EMAIL_API =
-  "https://cisco-payments.sabal.in/sendPaymentSuccessEmail";
-
-// const COURSE_PAYMENT_API = "http://localhost:3000/capturePayment";
-// const COURSE_VERIFY_API = "http://localhost:3000/verifyPayment";
+// const COURSE_PAYMENT_API = "https://cisco-payments.sabal.in/capturePayment";
+// const COURSE_VERIFY_API = "https://cisco-payments.sabal.in/verifyPayment";
 // const SEND_PAYMENT_SUCCESS_EMAIL_API =
-//   "http://localhost:3000/sendPaymentSuccessEmail";
+//   "https://cisco-payments.sabal.in/sendPaymentSuccessEmail";
+
+const COURSE_PAYMENT_API = "http://localhost:3000/capturePayment";
+const COURSE_VERIFY_API = "http://localhost:3000/verifyPayment";
+const SEND_PAYMENT_SUCCESS_EMAIL_API =
+  "http://localhost:3000/sendPaymentSuccessEmail";
 
 function loadScript(src) {
   return new Promise((resolve) => {
@@ -50,8 +50,15 @@ export async function buyCourse(mybody, navigate) {
     if (!orderResponse.data.success) {
       throw new Error(orderResponse.data.message);
     }
+    console.log(
+      typeof orderResponse.data.message.amount,
+      "the orderresponsewalaamount",
+      orderResponse.data.message.amount
+    );
+    console.log(orderResponse.data.message.amount !== mybody.amount * 100);
 
-    if (orderResponse.data.message.amount != mybody.amount) {
+    console.log(typeof mybody.amount, "mybodywala amount", mybody.amount);
+    if (orderResponse.data.message.amount !== mybody.amount * 100) {
       console.log("paiso ke sath bakchodi nahi ");
       return;
     }

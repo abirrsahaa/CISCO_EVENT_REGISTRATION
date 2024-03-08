@@ -32,6 +32,9 @@ const UserSchema = new mongoose.Schema({
   techtalk: {
     type: Boolean,
   },
+  amount: {
+    type: Number,
+  },
   razorpay_order_id: {
     type: String,
   },

@@ -13,21 +13,26 @@ exports.capturePayment = async (req, res) => {
     req.body;
 
   console.log("the req body is ", req.body);
-  console.log("the amount is ", amount);
+  console.log("the amount is ", req.body.mybody.amount);
 
   const totalAmount = req.body.mybody.amount;
+  console.log(typeof totalAmount);
+  console.log(totalAmount);
+
   const option = req.body.mybody.option;
-  if (option !== 1 && totalAmount !== 400) {
+  console.log(typeof option);
+  console.log(option);
+  if (option == 1 && totalAmount !== 400) {
     console.log("laude paisa nahi badalna");
     return;
   }
 
-  if (option !== 2 && totalAmount !== 500) {
+  if (option == 2 && totalAmount !== 500) {
     console.log("laude paisa nahi badalna");
     return;
   }
 
-  if (option !== 3 && totalAmount !== 1000) {
+  if (option == 3 && totalAmount !== 1000) {
     console.log("laude paisa nahi badalna");
     return;
   }
@@ -87,6 +92,7 @@ exports.verifyPayment = async (req, res) => {
       event1: req.body.mybody.event1,
       event2: req.body.mybody.event2,
       techtalk: req.body.mybody.techtalk,
+      amount: parseInt(req.body.mybody.amount),
       razorpay_order_id: razorpay_order_id,
       razorpay_payment_id: razorpay_payment_id,
     });
