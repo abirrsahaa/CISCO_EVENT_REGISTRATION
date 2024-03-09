@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { buyCourse } from "../components/service";
 import { z } from "zod";
 import explorer from "../assets/explorer.png";
+import mobile from "../assets/mobile explorer.png";
 
 const Registration2 = () => {
   const [dberror, setdberror] = useState(null);
@@ -60,9 +61,14 @@ const Registration2 = () => {
       <div className="md:h-[90%] h-[1000px] flex flex-col md:flex md:flex-row justify-center items-center w-[80%] md:w-[70%]  rounded-3xl overflow-hiddden  shadow-3xl bg-red-500 shadow-2xl">
         <div className="h-[250px] w-[310px] md:w-[420px] md:h-[720px] bg-blue-500">
           <img
+            src={mobile}
+            alt="img"
+            className="h-[100%] w-[100%] object-cover object-top md:hidden "
+          />
+          <img
             src={explorer}
             alt="img"
-            className="h-[100%] w-[100%] object-cover object-top md:object-center "
+            className="hidden h-[100%] w-[100%] object-cover object-center md:block "
           />
         </div>
         <div className="h-[75%] w-full md:w-[60%] md:h-full relative  bg-white flex flex-col items-center gap-5">
@@ -198,7 +204,7 @@ const Registration2 = () => {
                 Price -
               </span>
               <span className="text-black text-[20px] md:text-[32px] mb-1  font-bold">
-                &nbsp;Rs.500
+                &nbsp;Rs.499
               </span>
             </div>
             <button
@@ -353,7 +359,7 @@ const Registration2 = () => {
                     return;
                   }
                   console.log("parsedInput", parsedInput);
-                  const amount = 500;
+                  const amount = 499;
                   const {
                     username,
                     phone,

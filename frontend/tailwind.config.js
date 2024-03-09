@@ -6,8 +6,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "bender": ["Bender", "sans-serif"],
-        "product-sans": ["Product Sans", "sans-serif"],
+        benderlight: ["light"],
+        benderbold: ["bold"],
+        benderregular: ["regular"],
       },
     },
   },

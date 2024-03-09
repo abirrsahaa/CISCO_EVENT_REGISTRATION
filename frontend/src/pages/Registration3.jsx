@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { buyCourse } from "../components/service";
 import { z } from "zod";
 
+import enthusiast from "../assets/ehtusiast.png";
+import mobileEnthusiast from "../assets/mobile enthusiast.png";
+
 const Registration3 = () => {
   const [dberror, setdberror] = useState(null);
   // const [zoderror, setzoderror] = useState(null);
@@ -59,9 +62,14 @@ const Registration3 = () => {
       <div className="md:h-[90%] h-[1000px] flex flex-col md:flex md:flex-row justify-center items-center w-[80%] md:w-[70%]  rounded-3xl overflow-hiddden  shadow-3xl bg-red-500 shadow-2xl">
         <div className="h-[250px] w-[310px] md:w-[420px] md:h-[720px] bg-blue-500">
           <img
-            src="https://s3-alpha-sig.figma.com/img/1927/49c3/2c1544379dd4f287d9ec779ed4b91325?Expires=1710720000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=btFsko1Hx05daQrTkxb-k7tPPg1cSgLbno~m97WAkGHPndH4jUUmxq9~hHtF2BP6FubXDfPUfDbCrCLF8OAISwpCU1NdulmkPdWcEARyTHCLkOxpg1EsTXKjyM4hHLMp8f587t7vvH4iEPitr06efBPDuDY12juShvh7DqxodkZ7Ort0pFBtwelX7pbYKZ3-ArpYOkrIZOcU~agoa0GPLACWLuy66uhpidRlRweW6JQXUwsB6NGkitpgItm1lO3BgwuqtFcvS6JtVBLmfVOEMR5tKXsWHQRtWusIhpyn0cz-aEOwIA1zX0IaZmpCVGqZFyBcMYignvUCxI2-PKcU~g__"
+            src={enthusiast}
             alt="img"
-            className="h-[100%] w-[100%] object-cover object-center"
+            className="h-[100%] w-[100%] object-cover object-center hidden md:block "
+          />
+          <img
+            src={mobileEnthusiast}
+            alt="img"
+            className="h-[100%] w-[100%] object-cover object-top  md:hidden "
           />
         </div>
         <div className="h-[75%] w-full md:w-[60%] md:h-full relative  bg-white flex flex-col items-center gap-5">
@@ -197,7 +205,7 @@ const Registration3 = () => {
                 Price -
               </span>
               <span className="text-black text-[20px] md:text-[32px] mb-1  font-bold">
-                &nbsp;Rs.1000
+                &nbsp;Rs.999
               </span>
             </div>
             <button
@@ -352,7 +360,7 @@ const Registration3 = () => {
                     return;
                   }
                   console.log("parsedInput", parsedInput);
-                  const amount = 1000;
+                  const amount = 999;
                   const {
                     username,
                     phone,
