@@ -23,7 +23,7 @@ const Info = () => {
                 Day 1
               </div>
               <div className="md:w-[198.67px]  leading-none h-[65px] text-center  flex items-center justify-center text-[#13FBD3] text-[12px] w-[160px]  md:text-[16px] p-1 font-bold">
-                Introduction to Cybersecurity and Bug bounty
+                Introduction to Cybersecurity and Bug Bounty
               </div>
               <div className="w-[122.8px] h-[17.21px] rounded-2xl  text-white flex items-center justify-center text-[11px]">
                 <span></span>10:00 am - 04:00pm
@@ -35,7 +35,7 @@ const Info = () => {
                 Day 1
               </div>
               <div className="md:w-[198.67px]  leading-none h-[65px] text-center  flex items-center justify-center text-[#13FBD3] text-[12px] w-[160px]  md:text-[16px] p-1 font-bold">
-                Introduction to Cybersecurity and Bug bounty
+                Understanding Malware and Basic Malware Analysis
               </div>
               <div className="w-[122.8px] h-[17.21px] rounded-2xl  text-white flex items-center justify-center text-[11px]">
                 <span></span>10:00 am - 04:00pm
@@ -46,10 +46,10 @@ const Info = () => {
             <div className="h-[47%]  w-[90%] bg-[#121E2C] border-2 border-solid flex flex-col items-center justify-center gap-3 border-[#2CE1C0]   rounded-2xl">
               {" "}
               <div className="w-[45px] text-white h-[18px]  flex items-center justify-center font-normal text-[15px]">
-                Day 1
+                Day 2
               </div>
               <div className="md:w-[198.67px]  leading-none h-[65px] text-center  flex items-center justify-center text-[#13FBD3] text-[12px] w-[160px]  md:text-[16px] p-1 font-bold">
-                Introduction to Cybersecurity and Bug bounty
+                Introduction to Pentesting and Android App Pentest
               </div>
               <div className="w-[122.8px] h-[17.21px] rounded-2xl  text-white flex items-center justify-center text-[11px]">
                 <span></span>10:00 am - 04:00pm
@@ -58,10 +58,10 @@ const Info = () => {
             <div className="h-[47%]  w-[90%] bg-[#121E2C] border-2 border-solid flex flex-col items-center justify-center gap-3 border-[#2CE1C0]   rounded-2xl">
               {" "}
               <div className="w-[45px] text-white h-[18px]  flex items-center justify-center font-normal text-[15px]">
-                Day 1
+                Day 2
               </div>
               <div className="md:w-[198.67px]  leading-none h-[65px] text-center  flex items-center justify-center text-[#13FBD3] text-[12px] w-[160px]  md:text-[16px] p-1 font-bold">
-                Introduction to Cybersecurity and Bug bounty
+                Introduction to Blockchain and Threat Intelligence
               </div>
               <div className="w-[122.8px] h-[17.21px] rounded-2xl  text-white flex items-center justify-center text-[11px]">
                 <span></span>10:00 am - 04:00pm

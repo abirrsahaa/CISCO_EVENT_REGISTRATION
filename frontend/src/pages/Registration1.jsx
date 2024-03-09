@@ -46,56 +46,10 @@ const Registration1 = () => {
 
   const checking_api = "https://cisco-payments.sabal.in/checking";
 
-  const signupHandler = async () => {
-    const user = {
-      Username,
-      PhoneNumber,
-      RegistrationNumber,
-      Email,
-      event: options[selected].content,
-      techtalk: availed,
-    };
-    console.log("the details of registered user is ", user);
-    console.log("the signup handler is called");
-    console.log(
-      "the data ->",
-      Username,
-      Email,
-      PhoneNumber,
-      RegistrationNumber,
-      availed,
-      options[selected]
-    );
-    const signingup = await fetch(registration, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: Username,
-        email: Email,
-        event: options[selected].content,
-        techtalk: availed,
-        phone: PhoneNumber,
-        registration: RegistrationNumber,
-      }),
-    });
-    const response = await signingup.json();
-    console.log("the response ->", response);
-    // here i place of error i will be playing with react toastify
-    if (response) {
-      alert("User created successfully");
-      // setUser(true);
-      console.log(response);
-      // dispatch(setting(response.token));
-    } else {
-      alert("User creation failed");
-    }
-  };
   return (
-    <div className="w-[100vw] h-[800px] md:[100vh] flex flex-col md:flex md:flex-row items-center justify-center">
-      <div className="md:h-[90%] h-[1000px] flex flex-col md:flex md:flex-row justify-center items-center w-[70%] rounded-2xl bg-red-500 shadow-2xl">
-        <div className="h-[25%] w-full md:w-[40%] md:h-full bg-blue-500">
+    <div className="w-[100vw] h-[1000px] md:h-[800px] md:[100vh] flex flex-col md:flex md:flex-row items-center justify-center overflow-hidden rounded-3xl">
+      <div className="md:h-[90%] h-[1000px] flex flex-col md:flex md:flex-row justify-center items-center w-[80%] md:w-[70%]  rounded-3xl overflow-hiddden  shadow-3xl bg-red-500 shadow-2xl">
+        <div className="h-[250px] w-[310px] md:w-[420px] md:h-[720px] bg-blue-500">
           <img
             src="https://s3-alpha-sig.figma.com/img/1927/49c3/2c1544379dd4f287d9ec779ed4b91325?Expires=1710720000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=btFsko1Hx05daQrTkxb-k7tPPg1cSgLbno~m97WAkGHPndH4jUUmxq9~hHtF2BP6FubXDfPUfDbCrCLF8OAISwpCU1NdulmkPdWcEARyTHCLkOxpg1EsTXKjyM4hHLMp8f587t7vvH4iEPitr06efBPDuDY12juShvh7DqxodkZ7Ort0pFBtwelX7pbYKZ3-ArpYOkrIZOcU~agoa0GPLACWLuy66uhpidRlRweW6JQXUwsB6NGkitpgItm1lO3BgwuqtFcvS6JtVBLmfVOEMR5tKXsWHQRtWusIhpyn0cz-aEOwIA1zX0IaZmpCVGqZFyBcMYignvUCxI2-PKcU~g__"
             alt="img"
@@ -150,7 +104,7 @@ const Registration1 = () => {
               </div>
             </div>
             <div className="mt-5 w-full h-[60%]">
-              <div className="text-[16px] text-left font-bold pl-2 text-black">
+              <div className="text-[18px] md:text-[16px] flex justify-center items-center text-center md:text-left font-bold px-4 md:pl-2 text-black">
                 Choose Workshop for day 1 and day 2 :
               </div>
               <div className="flex flex-col justify-center items-start">
@@ -164,7 +118,7 @@ const Registration1 = () => {
                         onChange={() => {
                           setselected(index);
                         }}
-                        className="bg-white text-white"
+                        className="bg-white text-white ml-3"
                       />
                       <label className="ml-3 text-black">
                         {element.content}
@@ -176,7 +130,7 @@ const Registration1 = () => {
               <div className="mt-3">
                 <input
                   type="checkbox"
-                  className="bg-white text-white"
+                  className="bg-white text-white ml-3"
                   onChange={() => setavailed(!availed)}
                 />
                 <label className="ml-3 text-black ">
@@ -203,12 +157,12 @@ const Registration1 = () => {
               )}
             </div>
           </div>
-          <div className="w-[90%] flex px-3 justify-between items-center h-[10%] md:h-[15%] absolute bottom-3 ">
-            <div className="flex justify-center items-center">
-              <span className=" text-[16px] md:text-[28px] text-black ">
+          <div className="w-[90%] flex px-0 md:px-3 justify-between  items-center h-[10%] md:h-[15%] absolute bottom-3 ">
+            <div className="flex justify-center items-center gap-1">
+              <span className=" text-[16px] font-semibold md:text-[28px] text-black ">
                 Price -
               </span>
-              <span className="text-black text-[24px] md:text-[32px] font-bold">
+              <span className="text-black text-[20px] md:text-[32px] mb-1  font-bold">
                 &nbsp;Rs.400
               </span>
             </div>
@@ -381,7 +335,7 @@ const Registration1 = () => {
                 }
                 buyCourse(finalBody, navigate);
               }}
-              className="bg-black rounded-3xl w-[40%] h-[50%] text-white flex items-center justify-center font-bold text-[12px] md:text-[18px]"
+              className="bg-black hover:cursor-pointer rounded-3xl w-[40%] h-[50%] text-white flex items-center justify-center font-bold text-[12px] md:text-[18px]"
             >
               Register
             </button>

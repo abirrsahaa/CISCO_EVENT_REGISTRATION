@@ -1,7 +1,7 @@
 import { toast } from "react-hot-toast";
 
 import { apiConnector } from "./apiconnector";
-import cisco from "./CiscoLogo101.png";
+import cisco from "../assets/CiscoLogo101.png";
 
 const COURSE_PAYMENT_API = "https://cisco-payments.sabal.in/capturePayment";
 const COURSE_VERIFY_API = "https://cisco-payments.sabal.in/verifyPayment";

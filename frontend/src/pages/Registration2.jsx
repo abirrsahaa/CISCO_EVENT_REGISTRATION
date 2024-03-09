@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { buyCourse } from "../components/service";
 import { z } from "zod";
+import explorer from "../assets/explorer.png";
 
 const Registration2 = () => {
   const [dberror, setdberror] = useState(null);
@@ -55,13 +56,13 @@ const Registration2 = () => {
     console.log("the details of registered user is ", user);
   };
   return (
-    <div className="w-[100vw] h-[800px] md:[100vh] flex flex-col md:flex md:flex-row items-center justify-center">
-      <div className="md:h-[90%] h-[1000px] flex flex-col md:flex md:flex-row justify-center items-center w-[70%] rounded-2xl bg-red-500 shadow-2xl">
-        <div className="h-[25%] w-full md:w-[40%] md:h-full bg-blue-500">
+    <div className="w-[100vw] h-[1000px] md:h-[800px] md:[100vh] flex flex-col md:flex md:flex-row items-center justify-center overflow-hidden rounded-3xl">
+      <div className="md:h-[90%] h-[1000px] flex flex-col md:flex md:flex-row justify-center items-center w-[80%] md:w-[70%]  rounded-3xl overflow-hiddden  shadow-3xl bg-red-500 shadow-2xl">
+        <div className="h-[250px] w-[310px] md:w-[420px] md:h-[720px] bg-blue-500">
           <img
-            src="https://s3-alpha-sig.figma.com/img/1927/49c3/2c1544379dd4f287d9ec779ed4b91325?Expires=1710720000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=btFsko1Hx05daQrTkxb-k7tPPg1cSgLbno~m97WAkGHPndH4jUUmxq9~hHtF2BP6FubXDfPUfDbCrCLF8OAISwpCU1NdulmkPdWcEARyTHCLkOxpg1EsTXKjyM4hHLMp8f587t7vvH4iEPitr06efBPDuDY12juShvh7DqxodkZ7Ort0pFBtwelX7pbYKZ3-ArpYOkrIZOcU~agoa0GPLACWLuy66uhpidRlRweW6JQXUwsB6NGkitpgItm1lO3BgwuqtFcvS6JtVBLmfVOEMR5tKXsWHQRtWusIhpyn0cz-aEOwIA1zX0IaZmpCVGqZFyBcMYignvUCxI2-PKcU~g__"
+            src={explorer}
             alt="img"
-            className="h-[100%] w-[100%] object-cover object-center"
+            className="h-[100%] w-[100%] object-cover object-top md:object-center "
           />
         </div>
         <div className="h-[75%] w-full md:w-[60%] md:h-full relative  bg-white flex flex-col items-center gap-5">
@@ -192,11 +193,11 @@ const Registration2 = () => {
             </div>
           </div>
           <div className="w-[90%] flex px-3 justify-between items-center h-[10%] md:h-[15%] absolute bottom-3 ">
-            <div className="flex justify-center items-center">
-              <span className=" text-[16px] md:text-[28px] text-black ">
+            <div className="flex justify-center items-center gap-1">
+              <span className=" text-[16px] font-semibold md:text-[28px] text-black ">
                 Price -
               </span>
-              <span className="text-black text-[24px] md:text-[32px] font-bold">
+              <span className="text-black text-[20px] md:text-[32px] mb-1  font-bold">
                 &nbsp;Rs.500
               </span>
             </div>
