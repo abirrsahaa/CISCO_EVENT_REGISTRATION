@@ -115,7 +115,7 @@ async function verifyPayment(bodyData, navigate) {
     }
     toast.success("payment Successful, ypou are addded to the course");
 
-    const newWebsiteUrl = "https://master--ciscoxlpuigen.netlify.app/";
+    const newWebsiteUrl = "https://ciscoxlpuigen.co.in/";
     window.location.href = newWebsiteUrl;
     // dispatch(resetCart());
   } catch (error) {
