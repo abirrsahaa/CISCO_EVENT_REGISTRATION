@@ -103,7 +103,7 @@ export async function buyCourse(mybody, navigate) {
 }
 
 //verify payment
-async function verifyPayment(bodyData, navigate) {
+async function verifyPayment(bodyData) {
   console.log("inside verify payment frontend");
   const toastId = toast.loading("Verifying Payment....");
   //   dispatch(setPaymentLoading(true));
