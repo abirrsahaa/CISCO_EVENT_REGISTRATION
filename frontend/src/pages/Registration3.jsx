@@ -59,8 +59,8 @@ const Registration3 = () => {
   };
   return (
     <div className="w-[100vw] h-[1000px] md:h-[800px] md:[100vh] flex flex-col md:flex md:flex-row items-center justify-center overflow-hidden rounded-3xl">
-      <div className="md:h-[90%] h-[1000px] flex flex-col md:flex md:flex-row justify-center items-center w-[80%] md:w-[70%]  rounded-3xl overflow-hiddden  shadow-3xl bg-red-500 shadow-2xl">
-        <div className="h-[250px] w-[310px] md:w-[420px] md:h-[720px] bg-blue-500">
+      <div className="md:h-[90%] h-[1000px] flex flex-col md:flex md:flex-row justify-center items-center w-[80%] md:w-[70%]  rounded-3xl overflow-hiddden  shadow-3xl  shadow-2xl">
+        <div className="h-[250px] w-[310px] md:w-[420px] md:h-[720px] ">
           <img
             src={enthusiast}
             alt="img"
