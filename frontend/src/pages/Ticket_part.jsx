@@ -21,7 +21,7 @@ const Ticket_part = () => {
           <div className="md:w-[76%] md:h-[95%] h-full w-full rounded-xl flex flex-col md:flex md:flex-row justify-between items-center">
             {/* yeh ak component hoga  */}
             <div className="md:h-[98%] w-[78%]  h-[440px] m-2  rounded-2xl md:w-[28%] overflow-hidden">
-              <div className="w-[300px] md:w-[312px] h-[200px] bg-gray-100 "></div>
+              <div className="w-[300px] md:w-full h-[200px] bg-gray-100 "></div>
               <div className="w-full h-[55%] p-2 bg-[#09131D] flex flex-col  roundedlg">
                 <div className="w-full h-[20%]  flex justify-between ">
                   <div className="h-full w-[45%]   ml-7 flex items-center justify-start font-benderregular font-bold text-[28px] text-[#13FBD3]">
@@ -61,7 +61,7 @@ const Ticket_part = () => {
               </div>
             </div>
             <div className="md:h-[98%] w-[78%]  h-[440px] m-2  rounded-2xl md:w-[28%] overflow-hidden">
-              <div className="w-[300px] md:w-[312px] h-[200px] bg-gray-100 "></div>
+              <div className="w-[300px] md:w-full h-[200px] bg-gray-100 "></div>
               <div className="w-full h-[55%] p-2 bg-[#09131D] flex flex-col  roundedlg">
                 <div className="w-full h-[20%]  flex justify-between ">
                   <div className="h-full w-[45%]   ml-7 flex items-center justify-start font-benderregular  font-bold text-[28px] text-[#13FBD3]">
@@ -112,8 +112,8 @@ const Ticket_part = () => {
                 </div>
               </div>
             </div>
-            <div className="md:h-[98%] w-[78%]  h-[440px] m-2  rounded-2xl md:w-[28%] overflow-hidden">
-              <div className="w-[300px] md:w-[311px] h-[200px] bg-gray-100 "></div>
+            <div className="md:h-[98%] w-[78%]   h-[440px] m-2  rounded-2xl md:w-[28%] overflow-hidden">
+              <div className="w-[300px] md:w-full h-[200px] bg-gray-100 "></div>
               <div className="w-full h-[55%] p-2 bg-[#09131D] flex flex-col  roundedlg">
                 <div className="w-full h-[20%]  flex justify-between ">
                   <div className="h-full w-[25%]  ml-14 flex items-center justify-center font-benderregular font-bold text-[28px] text-[#13FBD3]">
