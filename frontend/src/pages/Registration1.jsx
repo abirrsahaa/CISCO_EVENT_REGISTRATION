@@ -48,6 +48,7 @@ const Registration1 = () => {
 
   useEffect(() => {
     const getting = async () => {
+      console.log("inside getting");
       const response = await fetch(
         "https://cisco-payments.sabal.in/countBasic"
       );
