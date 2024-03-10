@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { z } from "zod";
-import basic from "../assets/basic.png";
+import basic from "../assets/basic-min.png";
 import basicmobile from "../assets/mobile basic.png";
 
 import { useNavigate } from "react-router-dom";
@@ -51,8 +51,8 @@ const Registration1 = () => {
 
   return (
     <div className="w-[100vw] h-[1000px] md:h-[800px] md:[100vh] flex flex-col md:flex md:flex-row items-center justify-center overflow-hidden rounded-3xl">
-      <div className="md:h-[90%] h-[1000px] flex flex-col md:flex md:flex-row justify-center items-center w-[80%] md:w-[70%]  rounded-3xl overflow-hiddden  shadow-3xl  shadow-2xl">
-        <div className="h-[250px] w-[310px] md:w-[420px] md:h-[720px] ">
+      <div className="md:h-[90%] h-[1000px] overflow-hidden flex flex-col md:flex md:flex-row justify-center items-center w-[80%] md:w-[70%]  rounded-3xl overflow-hiddden  shadow-3xl  shadow-2xl">
+        <div className="h-[250px] w-[305px] overflow-hidden md:w-[420px] md:h-[720px] ">
           <img
             src={basic}
             alt="img"

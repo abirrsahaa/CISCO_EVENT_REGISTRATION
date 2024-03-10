@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import cisco from "../assets/CiscoLogo101.png";
 import { useState } from "react";
 // import { slide as Menu } from "react-burger-menu";
@@ -16,21 +17,40 @@ const Navbar = () => {
           />
         </div>
         <div className="hidden md:flex justify-between items-center w-[50%] h-[80%]  rounded-lg">
-          <div className="w-[23%] hover:border-b-2 hover:cursor-pointer hover:border-b-green-500 transition ease-in duration-100 flex text-white justify-center items-center font-bold text-xl  h-[100%] rounded-b-none    rounded-2xl ">
-            HOME
-          </div>
-          <div className="w-[23%] hover:border-b-2 hover:cursor-pointer hover:border-b-green-500 transition ease-in duration-100 flex justify-center items-center font-bold text-xl text-white h-[100%]   rounded-b-none  rounded-2xl ">
-            ABOUT US
-          </div>
-          <div className="w-[23%] hover:border-b-2 hover:cursor-pointer hover:border-b-green-500 transition ease-in duration-100 flex justify-center items-center font-bold text-xl text-white h-[100%]  rounded-b-none   rounded-2xl ">
-            BLOGS
-          </div>
-          <div className="w-[23%]  hover:border-b-2 hover:cursor-pointer hover:border-b-green-500 transition ease-in duration-100 flex justify-center items-center font-bold text-xl text-white h-[100%] rounded-b-none   rounded-2xl ">
-            EVENTS
-          </div>
-          <div className="w-[23%] hover:border-b-2 hover:cursor-pointer hover:border-b-green-500 transition ease-in duration-100 flex justify-center items-center font-bold text-xl text-white h-[100%] rounded-b-none    rounded-2xl ">
-            RESOURCES
-          </div>
+          <Link to="https://ciscoxlpuigen.co.in/" className="w-[23%]">
+            <div className="w-[100%] font-benderregular hover:border-b-2 hover:cursor-pointer hover:border-b-green-500 transition ease-in duration-100 flex text-white justify-center items-center font-bold text-xl  h-[100%] rounded-b-none    rounded-2xl ">
+              HOME
+            </div>
+          </Link>
+          <Link
+            to="https://ciscoxlpuigen.netlify.app/About"
+            className="w-[25%]"
+          >
+            <div className="w-[100%] font-benderregular hover:border-b-2 hover:cursor-pointer hover:border-b-green-500 transition ease-in duration-100 flex justify-center items-center font-bold text-xl text-white h-[100%]   rounded-b-none  rounded-2xl ">
+              ABOUT US
+            </div>
+          </Link>
+          <Link
+            to="https://ciscoxlpuigen.netlify.app/Blogs"
+            className="w-[23%]"
+          >
+            <div className="w-[100%] font-benderregular hover:border-b-2 hover:cursor-pointer hover:border-b-green-500 transition ease-in duration-100 flex justify-center items-center font-bold text-xl text-white h-[100%]  rounded-b-none   rounded-2xl ">
+              BLOGS
+            </div>
+          </Link>
+          <Link
+            to="https://ciscoxlpuigen.netlify.app/cybersec"
+            className="w-[23%]"
+          >
+            <div className="w-[100%] font-benderregular  hover:border-b-2 hover:cursor-pointer hover:border-b-green-500 transition ease-in duration-100 flex justify-center items-center font-bold text-xl text-white h-[100%] rounded-b-none   rounded-2xl ">
+              EVENTS
+            </div>
+          </Link>
+          <Link to="/" className="w-[23%]">
+            <div className="w-[100%] font-benderregular hover:border-b-2 hover:cursor-pointer hover:border-b-green-500 transition ease-in duration-100 flex justify-center items-center font-bold text-xl text-white h-[100%] rounded-b-none    rounded-2xl ">
+              REGISTER
+            </div>
+          </Link>
         </div>
         <div className="w-[45%] md:w-[10%] h-[80%] flex items-center justify-end md:justify-center  rounded-lg">
           {/* <button class="relative w-[150px] mt-2 md:mt-0 inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-[37px] group bg-gradient-to-br from-[#00B3FF] to-[#2CE1C0]  hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
@@ -46,23 +66,42 @@ const Navbar = () => {
             <div className="h-[10%] w-[60%] bg-black"></div>
             <div className="h-[10%] w-[60%] bg-black"></div>
             {show && (
-              <div className="bg-gray-900 p-4 md:hidden absolute flex items-center justify-center top-8 rounded-xl z-[10000] right-5 h-[300px] w-[200px]">
-                <div className="w-[80%] h-[80%]  flex flex-col justify-between rounded-lg">
-                  <div className="w-full h-[19%] shadow-xl rounded-lg text-white font-bold text-lg flex items-center justify-center">
-                    HOME
-                  </div>
-                  <div className="w-full h-[19%] shadow-xl  rounded-xl text-white font-bold text-lg flex items-center justify-center">
-                    ABOUT US
-                  </div>
-                  <div className="w-full h-[19%] shadow-xl rounded-xl text-white font-bold text-lg flex items-center justify-center">
-                    BLOGS
-                  </div>
-                  <div className="w-full h-[19%] shadow-xl  rounded-xl text-white font-bold text-lg flex items-center justify-center">
-                    EVENTS
-                  </div>
-                  <div className="w-full h-[19%] shadow-xl rounded-xl text-white font-bold text-lg flex items-center justify-center">
-                    RESOURCES
-                  </div>
+              <div className="bg-gray-900 opacity-85 p-4 md:hidden absolute flex items-center justify-center top-8 rounded-xl z-[10000] right-5 h-[300px] w-[200px]">
+                <div className="w-[80%] h-[80%]  flex flex-col  justify-between rounded-lg">
+                  <Link to="https://ciscoxlpuigen.co.in/" className="w-[100%]">
+                    <div className="w-[100%] font-benderregular hover:border-b-2 hover:cursor-pointer hover:border-b-green-500 transition ease-in duration-100 flex text-white justify-center items-center font-bold text-xl  h-[100%] rounded-b-none    rounded-2xl ">
+                      HOME
+                    </div>
+                  </Link>
+                  <Link
+                    to="https://ciscoxlpuigen.netlify.app/About"
+                    className="w-[100%] "
+                  >
+                    <div className="w-[100%] font-benderregular hover:border-b-2 hover:cursor-pointer hover:border-b-green-500 transition ease-in duration-100 flex justify-center items-center font-bold text-xl text-white h-[100%]   rounded-b-none  rounded-2xl ">
+                      ABOUT US
+                    </div>
+                  </Link>
+                  <Link
+                    to="https://ciscoxlpuigen.netlify.app/Blogs"
+                    className="w-[100%]"
+                  >
+                    <div className="w-[100%] font-benderregular hover:border-b-2 hover:cursor-pointer hover:border-b-green-500 transition ease-in duration-100 flex justify-center items-center font-bold text-xl text-white h-[100%]  rounded-b-none   rounded-2xl ">
+                      BLOGS
+                    </div>
+                  </Link>
+                  <Link
+                    to="https://ciscoxlpuigen.netlify.app/cybersec"
+                    className="w-[100%]"
+                  >
+                    <div className="w-[100%] font-benderregular  hover:border-b-2 hover:cursor-pointer hover:border-b-green-500 transition ease-in duration-100 flex justify-center items-center font-bold text-xl text-white h-[100%] rounded-b-none   rounded-2xl ">
+                      EVENTS
+                    </div>
+                  </Link>
+                  <Link to="/" className="w-[100%]">
+                    <div className="w-[100%] font-benderregular hover:border-b-2 hover:cursor-pointer hover:border-b-green-500 transition ease-in duration-100 flex justify-center items-center font-bold text-xl text-white h-[100%] rounded-b-none    rounded-2xl ">
+                      REGISTER
+                    </div>
+                  </Link>
                 </div>
               </div>
             )}
