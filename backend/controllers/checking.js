@@ -20,3 +20,6 @@ exports.checking = async (req, res) => {
   }
   return res.json({ success: true, message: "User does not exist" });
 };
+
+// counter add for all tickets
+// configure the email for hostinger

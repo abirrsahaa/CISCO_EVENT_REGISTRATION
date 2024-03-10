@@ -35,6 +35,9 @@ const UserSchema = new mongoose.Schema({
   amount: {
     type: Number,
   },
+  level: {
+    type: String,
+  },
   razorpay_order_id: {
     type: String,
   },

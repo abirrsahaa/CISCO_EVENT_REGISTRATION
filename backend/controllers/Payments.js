@@ -98,6 +98,7 @@ exports.verifyPayment = async (req, res) => {
       event1: req.body.mybody.event1,
       event2: req.body.mybody.event2,
       techtalk: req.body.mybody.techtalk,
+      level: req.body.mybody.level,
       amount: parseInt(req.body.mybody.amount),
       razorpay_order_id: razorpay_order_id,
       razorpay_payment_id: razorpay_payment_id,

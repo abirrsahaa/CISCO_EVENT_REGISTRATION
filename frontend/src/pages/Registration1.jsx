@@ -46,6 +46,18 @@ const Registration1 = () => {
     console.log("the availed option is ", availed);
   }, [selected, availed]);
 
+  useEffect(() => {
+    const getting = async () => {
+      const response = await fetch(
+        "https://cisco-payments.sabal.in/countBasic"
+      );
+      const data = await response.json();
+      console.log("the data is ", data);
+      console.log("the number of basic ticket bought is --> ", data.message);
+    };
+    getting();
+  }, []);
+
   const checking_api = "https://cisco-payments.sabal.in/checking";
   // const checking_api = "http://localhost:3000/checking";
 
@@ -334,6 +346,7 @@ const Registration1 = () => {
                     email,
                     event,
                     techtalk,
+                    level: "Basic",
                     amount: amount,
                     option: 1,
                   };

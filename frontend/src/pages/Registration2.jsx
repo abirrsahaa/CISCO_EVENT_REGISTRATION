@@ -378,6 +378,7 @@ const Registration2 = () => {
                     event1,
                     event2,
                     techtalk,
+                    level: "Explorer",
                     amount: amount,
                     option: 2,
                   };
