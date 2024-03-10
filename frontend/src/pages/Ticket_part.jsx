@@ -113,7 +113,7 @@ const Ticket_part = () => {
               </div>
             </div>
             <div className="md:h-[98%] w-[78%]  h-[440px] m-2  rounded-2xl md:w-[28%] overflow-hidden">
-              <div className="w-[300px] md:w-[312px] h-[200px] bg-gray-100 "></div>
+              <div className="w-[300px] md:w-[311px] h-[200px] bg-gray-100 "></div>
               <div className="w-full h-[55%] p-2 bg-[#09131D] flex flex-col  roundedlg">
                 <div className="w-full h-[20%]  flex justify-between ">
                   <div className="h-full w-[25%]  ml-14 flex items-center justify-center font-benderregular font-bold text-[28px] text-[#13FBD3]">
