@@ -92,7 +92,7 @@ exports.paymentSuccessEmail = (
                     <p>Event1: ${event}</p>
                     <p>Event2: ${event1}</p>
                     <p>Event3: ${event2}</p>
-                    <p>TechTalk: ${techtalk}</p>
+                 
               </div>
               <div class="support">If you have any questions or need assistance, please feel free to reach out to us at <a
                       href="mailto:ciscoXlpuigen.com">ciscoxlpuigen.com</a>. We are here to help!</div>
