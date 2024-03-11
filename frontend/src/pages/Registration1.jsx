@@ -355,7 +355,7 @@ const Registration1 = () => {
                   console.log("zod error received in catch ", err);
                   return;
                 }
-                buyCourse(finalBody, navigate);
+                buyCourse(finalBody);
               }}
               className="bg-black hover:cursor-pointer rounded-3xl w-[40%] h-[50%] text-white flex items-center justify-center font-bold text-[12px] md:text-[18px]"
             >
