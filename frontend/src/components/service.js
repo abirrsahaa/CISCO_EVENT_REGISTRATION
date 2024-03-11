@@ -59,14 +59,14 @@ export async function buyCourse(mybody, navigate) {
       return;
     }
     // give here validation for email and phone number
-    if (mybody.email === "" || mybody.phone === "") {
-      toast.error("Please enter valid email and phone number");
-      return;
-    }
-    if (orderResponse.data.message.email !== mybody.email) {
-      console.log("email nahi match");
-      return;
-    }
+    // if (mybody.email === "" || mybody.phone === "") {
+    //   toast.error("Please enter valid email and phone number");
+    //   return;
+    // }
+    // if (orderResponse.data.message.email !== mybody.email) {
+    //   console.log("email nahi match");
+    //   return;
+    // }
     console.log("PRINTING orderResponse", orderResponse);
     //options
     const options = {
