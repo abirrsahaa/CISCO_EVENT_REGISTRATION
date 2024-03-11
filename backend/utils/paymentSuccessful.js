@@ -1,5 +1,8 @@
 exports.paymentSuccessEmail = (
   name,
+  level,
+  phone,
+  university,
   event,
   event1,
   event2,
@@ -77,8 +80,6 @@ exports.paymentSuccessEmail = (
       
       <body>
           <div class="container">
-              <a href="https://ciscoxlpuigen.co.in"><img class="logo" src=""
-                      alt="StudyNotion Logo"></a>
               <div class="message">Course Payment Confirmation</div>
               <div class="body">
                   <p>Dear ${name},</p>
@@ -87,7 +88,8 @@ exports.paymentSuccessEmail = (
                   <p>Your Payment ID is <b>${paymentId}</b></p>
                   <p>Your Order ID is <b>${orderId}</b></p>
                   <p>you have successfully registered for the following events:</p>
-                    <p>Event: ${event}</p>
+                  <p>Level: ${level}</p>
+                    <p>Event1: ${event}</p>
                     <p>Event2: ${event1}</p>
                     <p>Event3: ${event2}</p>
                     <p>TechTalk: ${techtalk}</p>

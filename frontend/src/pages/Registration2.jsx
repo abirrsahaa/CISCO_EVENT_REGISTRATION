@@ -30,10 +30,15 @@ const Registration2 = () => {
       content: "Day-2 (Introduction to blockchain and Threat intelligence)",
     },
   ];
-  const [Username, setUsername] = useState("");
+  const [fullname, setfullname] = useState("");
   const [PhoneNumber, setPhoneNumber] = useState("");
   const [RegistrationNumber, setRegistrationNumber] = useState("");
   const [Email, setEmail] = useState("");
+
+  const [university, setuniversity] = useState("");
+  const [gender, setgender] = useState("");
+  const [year, setyear] = useState("");
+  const [course, setcourse] = useState("");
 
   const [selected1, setselected1] = useState(null);
   const [selected2, setselected2] = useState(null);
@@ -47,7 +52,7 @@ const Registration2 = () => {
   // const checking_api = "http://localhost:3000/checking";
   const submithandler = () => {
     const user = {
-      Username,
+      fullname,
       PhoneNumber,
       RegistrationNumber,
       Email,
@@ -77,49 +82,85 @@ const Registration2 = () => {
             Register For Explorer Membership
           </div>
           <div className="md:w-[416.89px] md:h-[315.23px] ">
-            <div className="w-full h-[40%]  flex justify-center items-center">
-              <div className="w-[50%] h-full  flex flex-col items-center justify-center">
-                <div className="w-full h-[50%]  flex items-center justify-center">
+            <div className="w-full h-[50%]  flex justify-center items-center">
+              <div className="w-[50%] h-full  flex flex-col items-center justify-between">
+                <div className="w-full h-[25%] mb-1  flex flex-col gap-1 items-center justify-center">
                   <input
                     type="text"
-                    value={Username}
-                    placeholder="Username"
-                    onChange={(e) => setUsername(e.target.value)}
-                    className="w-[95%] h-[40px] font-benderregular bg-white border-b-2 text-black  border-black  p-2"
+                    value={fullname}
+                    placeholder="Full name*"
+                    onChange={(e) => setfullname(e.target.value)}
+                    className="w-[95%] font-benderregular h-[40px] bg-white border-b-2 text-black  border-black  p-2"
                   />
                 </div>
-                <div className="w-full h-[50%]  flex items-center justify-center ">
+                <div className="w-full h-[25%] mb-1  flex flex-col gap-1 items-center justify-center ">
                   <input
                     type="text"
                     value={PhoneNumber}
-                    placeholder="Phone Number"
+                    placeholder="Phone Number*"
                     onChange={(e) => setPhoneNumber(e.target.value)}
-                    className="w-[95%] h-[40px] font-benderregular bg-white border-b-2 text-black  border-black  p-2"
+                    className="w-[95%] font-benderregular h-[40px] bg-white border-b-2 text-black  border-black  p-2"
+                  />
+                </div>
+                <div className="w-full h-[25%] mb-1  flex flex-col gap-1 items-center justify-center ">
+                  <input
+                    type="text"
+                    value={gender}
+                    placeholder="Gender*"
+                    onChange={(e) => setgender(e.target.value)}
+                    className="w-[95%] font-benderregular h-[40px] bg-white border-b-2 text-black  border-black  p-2"
+                  />
+                </div>
+                <div className="w-full h-[25%] mb-1  flex flex-col gap-1 items-center justify-center ">
+                  <input
+                    type="text"
+                    value={university}
+                    placeholder="College/Company*"
+                    onChange={(e) => setuniversity(e.target.value)}
+                    className="w-[95%] font-benderregular h-[40px] bg-white border-b-2 text-black  border-black  p-2"
                   />
                 </div>
               </div>
-              <div className="w-[50%] h-full  flex flex-col items-center justify-center">
-                <div className="w-full h-[50%]  flex items-center justify-center">
+              <div className="w-[50%] h-full mt-0 md:mt-3  flex flex-col items-center justify-center">
+                <div className="w-full h-[25%] mb-1  flex flex-col gap-1 items-center justify-center">
                   <input
                     type="text"
                     value={RegistrationNumber}
-                    placeholder="Registration Number"
+                    placeholder="LPU regno./uuid*"
                     onChange={(e) => setRegistrationNumber(e.target.value)}
-                    className="w-[95%] h-[40px] font-benderregular bg-white border-b-2  border-black text-black  p-2"
+                    className="w-[95%] font-benderregular h-[40px] bg-white border-b-2  border-black text-black  p-2"
                   />
                 </div>
-                <div className="w-full h-[50%] bg-white  flex items-center justify-center">
+                <div className="w-full h-[25%] bg-white mb-1  flex flex-col gap-1 items-center justify-center">
                   <input
                     type="text"
                     value={Email}
-                    placeholder="Email"
+                    placeholder="Email*"
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-[95%] h-[40px] font-benderregular bg-white border-b-2 text-black  border-black  p-2"
+                    className="w-[95%] font-benderregular h-[40px] bg-white border-b-2 text-black  border-black  p-2"
+                  />
+                </div>
+                <div className="w-full h-[25%] bg-white mb-1  flex flex-col gap-1 items-center justify-center">
+                  <input
+                    type="text"
+                    value={year}
+                    placeholder="Year*"
+                    onChange={(e) => setyear(e.target.value)}
+                    className="w-[95%] font-benderregular h-[40px] bg-white border-b-2 text-black  border-black  p-2"
+                  />
+                </div>
+                <div className="w-full h-[25%] bg-white mb-1  flex flex-col gap-1 items-center justify-center">
+                  <input
+                    type="text"
+                    value={course}
+                    placeholder="Course/Position*"
+                    onChange={(e) => setcourse(e.target.value)}
+                    className="w-[95%] font-benderregular h-[40px] bg-white border-b-2 text-black  border-black  p-2"
                   />
                 </div>
               </div>
             </div>
-            <div className="mt-5 w-full h-[60%]">
+            <div className="mt-5 w-full h-[45%]">
               <div className="text-[16px] text-left font-benderregular font-bold pl-2 text-black">
                 Choose Workshop for day 1 :
               </div>
@@ -234,7 +275,7 @@ const Registration2 = () => {
                 // appply zod validation here and only after that send the details to the backend
                 const userSchema = z.object({
                   // Define the same schema as on the server side
-                  username: z.string().min(2).max(40),
+                  fullname: z.string().min(2).max(40),
                   phone: z
                     .string()
                     .min(10, {
@@ -244,6 +285,12 @@ const Registration2 = () => {
 
                   registration: z.string(),
                   email: z.string().email(),
+
+                  course: z.string().optional(),
+                  year: z.string().optional(),
+                  university: z.string().min(2),
+                  gender: z.string().min(1),
+
                   event: z.string().optional(),
                   event1: z.string().optional(),
                   event2: z.string().optional(),
@@ -275,7 +322,7 @@ const Registration2 = () => {
                       "Content-Type": "application/json",
                     },
                     body: JSON.stringify({
-                      username: Username,
+                      fullname: fullname,
                       email: Email,
                       phone: PhoneNumber,
                       registration: RegistrationNumber,
@@ -306,10 +353,14 @@ const Registration2 = () => {
                 }
 
                 const mybody = {
-                  username: Username,
+                  fullname: fullname,
                   email: Email,
                   phone: PhoneNumber,
                   registration: RegistrationNumber,
+                  gender: gender,
+                  course: course,
+                  year: year,
+                  university: university,
                   event1: options1[selected1].content,
                   event2: options2[selected2].content,
                   techtalk: availed,
@@ -337,7 +388,7 @@ const Registration2 = () => {
                         "the error path is ",
                         parsedInput.error.errors[i].path[0]
                       );
-                      if (parsedInput.error.errors[i].path[0] === "username") {
+                      if (parsedInput.error.errors[i].path[0] === "fullname") {
                         setUsernameError(parsedInput.error.errors[i].message);
                       }
                       if (parsedInput.error.errors[i].path[0] === "phone") {
@@ -369,19 +420,27 @@ const Registration2 = () => {
                   console.log("parsedInput", parsedInput);
                   const amount = 499;
                   const {
-                    username,
+                    fullname,
                     phone,
                     registration,
+                    course,
+                    year,
+                    gender,
+                    university,
                     email,
                     event1,
                     event2,
                     techtalk,
                   } = parsedInput.data;
                   finalBody = {
-                    username,
+                    fullname,
                     phone,
                     registration,
                     email,
+                    gender,
+                    course,
+                    year,
+                    university,
                     event1,
                     event2,
                     techtalk,

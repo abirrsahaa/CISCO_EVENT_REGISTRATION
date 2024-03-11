@@ -90,10 +90,14 @@ exports.verifyPayment = async (req, res) => {
     console.log("razorpay_payment_id", razorpay_payment_id);
     console.log("razorpay_signature", razorpay_signature);
     const user = await User.create({
-      username: req.body.mybody.username,
+      fullname: req.body.mybody.fullname,
       email: req.body.mybody.email,
       phone: req.body.mybody.phone,
       registration: req.body.mybody.registration,
+      year: req.body.mybody.year,
+      university: req.body.mybody.university,
+      gender: req.body.mybody.gender,
+      course: req.body.mybody.course,
       event: req.body.mybody.event,
       event1: req.body.mybody.event1,
       event2: req.body.mybody.event2,
@@ -131,7 +135,10 @@ exports.sendPaymentSuccessEmail = async (req, res) => {
       req.body.mybody.email,
       `Payment Recieved`,
       paymentSuccessEmail(
-        `${req.body.mybody.username}`,
+        `${req.body.mybody.fullname}`,
+        `${req.body.mybody.level}`,
+        `${req.body.mybody.phone}`,
+        `${req.body.mybody.university}`,
         `${req.body.mybody.event}`,
         `${req.body.mybody.event1}`,
         `${req.body.mybody.event2}`,
