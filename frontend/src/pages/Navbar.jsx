@@ -62,9 +62,9 @@ const Navbar = () => {
             onClick={() => setshow(!show)}
             className="w-[35%]  p-1 md:hidden flex flex-col gap-1 justify-center items-center   h-[90%] "
           >
-            <div className="h-[10%] w-[60%] bg-black"></div>
-            <div className="h-[10%] w-[60%] bg-black"></div>
-            <div className="h-[10%] w-[60%] bg-black"></div>
+            <div className="h-[10%] w-[60%] bg-white"></div>
+            <div className="h-[10%] w-[60%] bg-white"></div>
+            <div className="h-[10%] w-[60%] bg-white"></div>
             {show && (
               <div className="bg-gray-900 opacity-85 p-4 md:hidden absolute flex items-center justify-center top-8 rounded-xl z-[10000] right-5 h-[300px] w-[200px]">
                 <div className="w-[80%] h-[80%]  flex flex-col  justify-between rounded-lg">

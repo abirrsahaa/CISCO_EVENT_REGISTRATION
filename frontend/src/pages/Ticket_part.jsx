@@ -10,9 +10,10 @@ const Ticket_part = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="w-[100vw] md:m-0 h-[1780px] md:h-[800px]   mt-10 p-2">
-      <div className="w-[100%] md:h-[755px] h-[950px] flex flex-col items-center justify-between bg-[#121E2C]">
-        <div className="w-[100%] rounded-xl  flex flex-col items-center justify-center gap-4   h-[35%]">
+    // bg-[#121E2C]
+    <div className="w-[100vw]  md:m-0 h-[1700px]   md:h-[900px]    ">
+      <div className="w-[100%] md:h-full   h-[1700px] flex flex-col items-center justify-between md:justify-center ">
+        <div className="w-[100%] rounded-xl   flex flex-col items-center justify-center gap-4   h-[35%]">
           <div className="md:w-[800px] text-center w-[400px] h-[120px] px-2 mx-2   flex items-center justify-center text-[#13FBD3] md:text-[48px] text-[28px] font-benderregular font-bold">
             Get Yourself Registered for LPU's Biggest Cyber Security Conclave!
           </div>
@@ -21,7 +22,7 @@ const Ticket_part = () => {
             Emerging Threats.
           </p>
         </div>
-        <div className="w-[100%]  rounded-xl flex items-center justify-center  md:min-h-[450px] ">
+        <div className="w-[100%]   rounded-xl flex items-center justify-center  md:min-h-[450px] ">
           <div className="md:w-[76%] md:h-[95%] h-full w-full rounded-xl flex flex-col md:flex md:flex-row justify-between items-center">
             {/* yeh ak component hoga  */}
             <div className="md:h-[98%] w-[78%]  h-[440px] m-2  rounded-2xl md:w-[28%] overflow-hidden">

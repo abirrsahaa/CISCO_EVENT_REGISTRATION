@@ -11,8 +11,8 @@ function App() {
   return (
     <main className="w-[100vw]  overflow-hidden overflow-x-hidden  bg-gradient-to-b  from-[#09131D] to-[#121E2C] ">
       <Navbar />
-      <Hero />
-      <Info />
+      {/* <Hero /> */}
+      {/* <Info /> */}
       <Ticket_part />
       <Footer />
     </main>

@@ -27,10 +27,18 @@ const Footer = () => {
           </div>
           <ul className="flex gap-2 mx-2 pl-2 mt-2 tracking-tighter text-sm">
             <div className="flex font-benderregular flex-col gap-3 mx-3">
-              <li>Home</li>
-              <li>Events</li>
-              <li>Workshops</li>
-              <li>Blog</li>
+              <Link href="https://ciscoxlpuigen.co.in/">
+                <li>Home</li>
+              </Link>
+              <Link href="https://ciscoxlpuigen.netlify.app/cybersec">
+                <li>Events</li>
+              </Link>
+              <Link href="https://cisco-payments.sabal.in/">
+                <li>Register</li>
+              </Link>
+              <Link href="https://ciscoxlpuigen.netlify.app/Blogs">
+                <li>Blog</li>
+              </Link>
             </div>
             <div className="flex font-benderregular flex-col gap-3 mx-3 ">
               <li>Team</li>
@@ -48,7 +56,7 @@ const Footer = () => {
               <MdOutlineMailOutline className="text-[#13FBD3]  h-4" />
               <span className="flex font-benderregular items-center justify-center  h-4 pb-1">
                 {" "}
-                example@gmail.com
+                support@ciscoxlpuigen.co.in
               </span>
             </li>
             <li className="flex gap-2 justify-center items-center h-10 ">
@@ -85,7 +93,7 @@ const Footer = () => {
               />
             </div>
           </div>
-          <div className="w-[90%] h-[40%]  flex justify-start items-center text-left ">
+          <div className="w-[90%] font-benderregular h-[40%]  flex justify-start items-center text-left ">
             {" "}
             The Cisco x LPU iGen Community is an initiative undertaken by the
             tech enthusiasts at Lovely Professional University, with an
@@ -114,10 +122,18 @@ const Footer = () => {
           </div>
           <ul className="flex gap-16 mx-3 tracking-tighter text-xl mt-4">
             <div className="flex font-benderregular flex-col gap-3 mx-3">
-              <li>Home</li>
-              <li>Events</li>
-              <li>Workshops</li>
-              <li>Blog</li>
+              <Link href="https://ciscoxlpuigen.co.in/">
+                <li>Home</li>
+              </Link>
+              <Link href="https://ciscoxlpuigen.netlify.app/cybersec">
+                <li>Events</li>
+              </Link>
+              <Link href="https://cisco-payments.sabal.in/">
+                <li>Register</li>
+              </Link>
+              <Link href="https://ciscoxlpuigen.netlify.app/Blogs">
+                <li>Blog</li>
+              </Link>
             </div>
             <div className="flex font-benderregular flex-col gap-3 mx-3 ">
               <li>Team</li>
