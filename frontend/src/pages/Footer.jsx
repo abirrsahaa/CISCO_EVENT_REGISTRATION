@@ -40,11 +40,6 @@ const Footer = () => {
                 <li>Blog</li>
               </Link>
             </div>
-            <div className="flex font-benderregular flex-col gap-3 mx-3 ">
-              <li>Team</li>
-              <li>Gallery</li>
-              <li>Contact</li>
-            </div>
           </ul>
         </div>
         <div className="w-full h-[30%]  md:hidden block">
@@ -134,11 +129,6 @@ const Footer = () => {
               <Link href="https://ciscoxlpuigen.netlify.app/Blogs">
                 <li>Blog</li>
               </Link>
-            </div>
-            <div className="flex font-benderregular flex-col gap-3 mx-3 ">
-              <li>Team</li>
-              <li>Gallery</li>
-              <li>Contact</li>
             </div>
           </ul>
         </div>

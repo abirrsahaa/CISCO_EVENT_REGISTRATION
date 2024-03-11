@@ -41,7 +41,7 @@ const Ticket_part = () => {
                   <div className="h-full w-[25%]  mr-6 flex items-center justify-start font-benderregular font-semibold text-[18px] text-white">
                     Price:&nbsp;{" "}
                     <span className="text-[#00B3FF] font-benderregular font-bold">
-                      400
+                      399
                     </span>
                   </div>
                 </div>
@@ -88,7 +88,7 @@ const Ticket_part = () => {
                   <div className="h-full w-[25%]  mr-6 flex items-center justify-start font-benderregular font-semibold text-[18px] text-white">
                     Price:&nbsp;{" "}
                     <span className="text-[#00B3FF] font-benderregular font-bold">
-                      500
+                      499
                     </span>
                   </div>
                 </div>
@@ -146,7 +146,7 @@ const Ticket_part = () => {
                   <div className="h-full w-[25%]  mr-6 flex items-center justify-start font-benderregular font-semibold text-[18px] text-white">
                     Price:&nbsp;{" "}
                     <span className="text-[#00B3FF] font-benderregular font-bold">
-                      1000
+                      999
                     </span>
                   </div>
                 </div>

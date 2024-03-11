@@ -78,7 +78,7 @@ const Registration1 = () => {
           />
         </div>
         <div className="h-[75%] w-full md:w-[60%] md:h-full relative  bg-white flex flex-col items-center gap-5">
-          <div className="md:w-[390px] md:h-[71px] text-black  md:text-[32px] font-bold text-left">
+          <div className="md:w-[390px] font-benderregular md:h-[71px] text-black  md:text-[32px] font-bold text-left">
             Register For Basic Membership
           </div>
           <div className="md:w-[416.89px] md:h-[315.23px] ">
@@ -90,7 +90,7 @@ const Registration1 = () => {
                     value={Username}
                     placeholder="Username"
                     onChange={(e) => setUsername(e.target.value)}
-                    className="w-[95%] h-[40px] bg-white border-b-2 text-black  border-black  p-2"
+                    className="w-[95%] font-benderregular h-[40px] bg-white border-b-2 text-black  border-black  p-2"
                   />
                 </div>
                 <div className="w-full h-[50%]  flex flex-col gap-1 items-center justify-center ">
@@ -99,7 +99,7 @@ const Registration1 = () => {
                     value={PhoneNumber}
                     placeholder="Phone Number"
                     onChange={(e) => setPhoneNumber(e.target.value)}
-                    className="w-[95%] h-[40px] bg-white border-b-2 text-black  border-black  p-2"
+                    className="w-[95%] font-benderregular h-[40px] bg-white border-b-2 text-black  border-black  p-2"
                   />
                 </div>
               </div>
@@ -110,7 +110,7 @@ const Registration1 = () => {
                     value={RegistrationNumber}
                     placeholder="Registration Number"
                     onChange={(e) => setRegistrationNumber(e.target.value)}
-                    className="w-[95%] h-[40px] bg-white border-b-2  border-black text-black  p-2"
+                    className="w-[95%] font-benderregular h-[40px] bg-white border-b-2  border-black text-black  p-2"
                   />
                 </div>
                 <div className="w-full h-[50%] bg-white  flex flex-col gap-1 items-center justify-center">
@@ -119,16 +119,16 @@ const Registration1 = () => {
                     value={Email}
                     placeholder="Email"
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-[95%] h-[40px] bg-white border-b-2 text-black  border-black  p-2"
+                    className="w-[95%] font-benderregular h-[40px] bg-white border-b-2 text-black  border-black  p-2"
                   />
                 </div>
               </div>
             </div>
             <div className="mt-5 w-full h-[60%]">
-              <div className="text-[18px] md:text-[16px] flex justify-center items-center text-center md:text-left font-bold px-4 md:pl-2 text-black">
+              <div className="text-[18px] font-benderregular md:text-[16px] flex justify-center items-center text-center md:text-left font-bold px-4 md:pl-2 text-black">
                 Choose Workshop for day 1 and day 2 :
               </div>
-              <div className="flex flex-col justify-center items-start">
+              <div className="flex font-benderregular flex-col justify-center items-start">
                 {options.map((element, index) => {
                   return (
                     <div key={index} className="mt-4">
@@ -139,9 +139,9 @@ const Registration1 = () => {
                         onChange={() => {
                           setselected(index);
                         }}
-                        className="bg-white text-white ml-3"
+                        className="bg-white font-benderregular text-white ml-3"
                       />
-                      <label className="ml-3 text-black">
+                      <label className="ml-3 font-benderregular text-black">
                         {element.content}
                       </label>
                     </div>
@@ -151,39 +151,49 @@ const Registration1 = () => {
               <div className="mt-3">
                 <input
                   type="checkbox"
-                  className="bg-white text-white ml-3"
+                  className="bg-white font-benderregular text-white ml-3"
                   onChange={() => setavailed(!availed)}
                 />
-                <label className="ml-3 text-black ">
+                <label className="ml-3 font-benderregular text-black ">
                   Get access to all the tech talks
                 </label>
               </div>
-              {dberror && <p className="text-red-500">{dberror}</p>}
+              {dberror && (
+                <p className="text-red-500 font-benderregular">{dberror}</p>
+              )}
               {eventError && (
-                <p className="text-red-500 text-sm">{eventError}</p>
+                <p className="text-red-500 text-sm font-benderregular">
+                  {eventError}
+                </p>
               )}
               {registrationError && (
-                <p className="text-red-500 text-sm leading-none">
+                <p className="text-red-500 text-sm leading-none font-benderregular">
                   {registrationError}
                 </p>
               )}
               {phoneError && (
-                <p className="text-red-500 text-sm">{phoneError}</p>
+                <p className="text-red-500 text-sm font-benderregular">
+                  {phoneError}
+                </p>
               )}
               {usernameError && (
-                <p className="text-red-500 text-sm">{usernameError}</p>
+                <p className="text-red-500 text-sm font-benderregular">
+                  {usernameError}
+                </p>
               )}
               {emailError && (
-                <p className="text-red-500 text-sm">{emailError}</p>
+                <p className="text-red-500 text-sm font-benderregular">
+                  {emailError}
+                </p>
               )}
             </div>
           </div>
           <div className="w-[90%] flex px-0 md:px-3 justify-between  items-center h-[10%] md:h-[15%] absolute bottom-3 ">
             <div className="flex justify-center items-center gap-1">
-              <span className=" text-[16px] font-semibold md:text-[28px] text-black ">
+              <span className=" text-[16px] font-benderregular font-semibold md:text-[28px] text-black ">
                 Price -
               </span>
-              <span className="text-black text-[20px] md:text-[32px] mb-1  font-bold">
+              <span className="text-black font-benderregular text-[20px] md:text-[32px] mb-1  font-bold">
                 &nbsp;Rs.399
               </span>
             </div>
@@ -208,12 +218,7 @@ const Registration1 = () => {
                     })
                     .max(10),
 
-                  registration: z
-                    .string()
-                    .min(8, {
-                      message: "registration must contain only 8 character(s)",
-                    })
-                    .max(8),
+                  registration: z.string(),
                   email: z.string().email(),
                   event: z.string().optional(),
                   event1: z.string().optional(),
@@ -357,7 +362,7 @@ const Registration1 = () => {
                 }
                 buyCourse(finalBody);
               }}
-              className="bg-black hover:cursor-pointer rounded-3xl w-[40%] h-[50%] text-white flex items-center justify-center font-bold text-[12px] md:text-[18px]"
+              className="bg-black font-benderregular hover:cursor-pointer rounded-3xl w-[40%] h-[50%] text-white flex items-center justify-center font-bold text-[12px] md:text-[18px]"
             >
               Register
             </button>

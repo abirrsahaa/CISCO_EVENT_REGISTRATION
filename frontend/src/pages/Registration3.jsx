@@ -73,7 +73,7 @@ const Registration3 = () => {
           />
         </div>
         <div className="h-[75%] w-full md:w-[60%] md:h-full relative  bg-white flex flex-col items-center gap-5">
-          <div className="md:w-[390px] md:h-[71px] text-black  md:text-[32px] font-bold text-left">
+          <div className="md:w-[390px] font-benderregular md:h-[71px] text-black  md:text-[32px] font-bold text-left">
             Register For Enthusiast Membership
           </div>
           <div className="md:w-[416.89px] md:h-[315.23px] ">
@@ -85,7 +85,7 @@ const Registration3 = () => {
                     value={Username}
                     placeholder="Username"
                     onChange={(e) => setUsername(e.target.value)}
-                    className="w-[95%] h-[40px] bg-white border-b-2 text-black  border-black  p-2"
+                    className="w-[95%] h-[40px] bg-white border-b-2 font-benderregular text-black  border-black  p-2"
                   />
                 </div>
                 <div className="w-full h-[50%]  flex items-center justify-center ">
@@ -94,39 +94,39 @@ const Registration3 = () => {
                     value={PhoneNumber}
                     placeholder="Phone Number"
                     onChange={(e) => setPhoneNumber(e.target.value)}
-                    className="w-[95%] h-[40px] bg-white border-b-2 text-black  border-black  p-2"
+                    className="w-[95%] h-[40px] bg-white border-b-2 font-benderregular text-black  border-black  p-2"
                   />
                 </div>
               </div>
               <div className="w-[50%] h-full  flex flex-col items-center justify-center">
-                <div className="w-full h-[50%]  flex items-center justify-center">
+                <div className="w-full h-[50%]  flex items-center font-benderregular justify-center">
                   <input
                     type="text"
                     value={RegistrationNumber}
                     placeholder="Registration Number"
                     onChange={(e) => setRegistrationNumber(e.target.value)}
-                    className="w-[95%] h-[40px] bg-white border-b-2  border-black text-black  p-2"
+                    className="w-[95%] h-[40px] bg-white border-b-2 font-benderregular  border-black text-black  p-2"
                   />
                 </div>
-                <div className="w-full h-[50%] bg-white  flex items-center justify-center">
+                <div className="w-full h-[50%] bg-white font-benderregular  flex items-center justify-center">
                   <input
                     type="text"
                     value={Email}
                     placeholder="Email"
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-[95%] h-[40px] bg-white border-b-2 text-black  border-black  p-2"
+                    className="w-[95%] h-[40px] bg-white font-benderregular border-b-2 text-black  border-black  p-2"
                   />
                 </div>
               </div>
             </div>
             <div className="mt-5 w-full h-[60%]">
-              <div className="text-[16px] text-left font-bold pl-2 text-black">
+              <div className="text-[16px] font-benderregular text-left font-bold pl-2 text-black">
                 Choose Workshop for day 1 :
               </div>
               <div className="flex flex-col justify-center items-start">
                 {options1.map((element, index) => {
                   return (
-                    <div key={index} className="mt-4">
+                    <div key={index} className="mt- font-benderregular">
                       <input
                         type="radio"
                         value={index}
@@ -134,22 +134,22 @@ const Registration3 = () => {
                         onChange={() => {
                           setselected1(index);
                         }}
-                        className="bg-white text-white"
+                        className="bg-white text-white  font-benderregular"
                       />
-                      <label className="ml-3 text-black">
+                      <label className="ml-3 font-benderregular text-black">
                         {element.content}
                       </label>
                     </div>
                   );
                 })}
               </div>
-              <div className="text-[16px] mt-3 text-left font-bold pl-2 text-black">
+              <div className="text-[16px] mt-3 text-left font-benderregular font-bold pl-2 text-black">
                 Choose Workshop for day 2 :
               </div>
-              <div className="flex flex-col justify-center items-start">
+              <div className="flex flex-col justify-center font-benderregular items-start">
                 {options2.map((element, index) => {
                   return (
-                    <div key={index} className="mt-4">
+                    <div key={index} className="mt-4 font-benderregular">
                       <input
                         type="radio"
                         value={index}
@@ -157,9 +157,9 @@ const Registration3 = () => {
                         onChange={() => {
                           setselected2(index);
                         }}
-                        className="bg-white text-white"
+                        className="bg-white font-benderregular text-white"
                       />
-                      <label className="ml-3 text-black">
+                      <label className="ml-3 font-benderregular text-black">
                         {element.content}
                       </label>
                     </div>
@@ -169,42 +169,54 @@ const Registration3 = () => {
               <div className="mt-3">
                 <input
                   type="checkbox"
-                  className="bg-white text-white"
+                  className="bg-white font-benderregular text-white"
                   onChange={() => setavailed(!availed)}
                 />
-                <label className="ml-3 text-black ">
+                <label className="ml-3 font-benderregular text-black ">
                   Get access to all the tech talks
                 </label>
               </div>
-              {dberror && <p className="text-red-500">{dberror}</p>}
+              {dberror && (
+                <p className="text-red-500 font-benderregular">{dberror}</p>
+              )}
               {event1Error && (
-                <p className="text-red-500 text-sm">{event1Error}</p>
+                <p className="text-red-500 font-benderregular text-sm">
+                  {event1Error}
+                </p>
               )}
               {event2Error && (
-                <p className="text-red-500 text-sm">{event2Error}</p>
+                <p className="text-red-500 font-benderregular text-sm">
+                  {event2Error}
+                </p>
               )}
               {registrationError && (
-                <p className="text-red-500 text-sm leading-none">
+                <p className="text-red-500 font-benderregular text-sm leading-none">
                   {registrationError}
                 </p>
               )}
               {phoneError && (
-                <p className="text-red-500 text-sm">{phoneError}</p>
+                <p className="text-red-500 font-benderregular text-sm">
+                  {phoneError}
+                </p>
               )}
               {usernameError && (
-                <p className="text-red-500 text-sm">{usernameError}</p>
+                <p className="text-red-500 font-benderregular text-sm">
+                  {usernameError}
+                </p>
               )}
               {emailError && (
-                <p className="text-red-500 text-sm">{emailError}</p>
+                <p className="text-red-500 font-benderregular text-sm">
+                  {emailError}
+                </p>
               )}
             </div>
           </div>
-          <div className="w-[90%] flex px-3 justify-between items-center h-[10%] md:h-[15%] absolute bottom-3 ">
+          <div className="w-[90%] font-benderregular flex px-3 justify-between items-center h-[10%] md:h-[15%] absolute bottom-3 ">
             <div className="flex justify-center items-center gap-1">
-              <span className=" text-[16px] font-semibold md:text-[28px] text-black ">
+              <span className=" text-[16px] font-benderregular font-semibold md:text-[28px] text-black ">
                 Price -
               </span>
-              <span className="text-black text-[20px] md:text-[32px] mb-1  font-bold">
+              <span className="text-black font-benderregular text-[20px] md:text-[32px] mb-1  font-bold">
                 &nbsp;Rs.999
               </span>
             </div>
@@ -230,12 +242,7 @@ const Registration3 = () => {
                     })
                     .max(10),
 
-                  registration: z
-                    .string()
-                    .min(8, {
-                      message: "registration must contain only 8 character(s)",
-                    })
-                    .max(8),
+                  registration: z.string(),
                   email: z.string().email(),
                   event: z.string().optional(),
                   event1: z.string().optional(),
@@ -388,7 +395,7 @@ const Registration3 = () => {
                 }
                 buyCourse(finalBody);
               }}
-              className="bg-black rounded-3xl w-[40%] h-[50%] text-white flex items-center justify-center font-bold text-[18px]"
+              className="bg-black font-benderregular rounded-3xl w-[40%] h-[50%] text-white flex items-center justify-center font-bold text-[18px]"
             >
               Register
             </button>
