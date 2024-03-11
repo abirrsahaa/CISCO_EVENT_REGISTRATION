@@ -26,6 +26,7 @@ const app = express();
 app.use(cors(corsOptions));
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 const dotenv = require("dotenv");
 
 dotenv.config();

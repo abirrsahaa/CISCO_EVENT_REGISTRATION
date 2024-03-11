@@ -7,6 +7,8 @@ import { COURSE_PAYMENT_API } from "./constans";
 import { COURSE_VERIFY_API } from "./constans";
 import { SEND_PAYMENT_SUCCESS_EMAIL_API } from "./constans";
 
+import { something } from "./constans";
+
 function loadScript(src) {
   return new Promise((resolve) => {
     const script = document.createElement("script");
@@ -44,22 +46,31 @@ export async function buyCourse(mybody, navigate) {
     if (!orderResponse.data.success) {
       throw new Error(orderResponse.data.message);
     }
-    console.log(
-      typeof orderResponse.data.message.amount,
-      "the orderresponsewalaamount",
-      orderResponse.data.message.amount
-    );
-    console.log(orderResponse.data.message.amount !== mybody.amount * 100);
+    // console.log(
+    //   typeof orderResponse.data.message.amount,
+    //   "the orderresponsewalaamount",
+    //   orderResponse.data.message.amount
+    // );
+    // console.log(orderResponse.data.message.amount !== mybody.amount * 100);
 
-    console.log(typeof mybody.amount, "mybodywala amount", mybody.amount);
+    // console.log(typeof mybody.amount, "mybodywala amount", mybody.amount);
     if (orderResponse.data.message.amount !== mybody.amount * 100) {
       console.log("paiso ke sath bakchodi nahi ");
+      return;
+    }
+    // give here validation for email and phone number
+    if (mybody.email === "" || mybody.phone === "") {
+      toast.error("Please enter valid email and phone number");
+      return;
+    }
+    if (orderResponse.data.message.email !== mybody.email) {
+      console.log("email nahi match");
       return;
     }
     console.log("PRINTING orderResponse", orderResponse);
     //options
     const options = {
-      key: "rzp_test_zbFs5ZeCWJ8X3E",
+      key: something,
       currency: orderResponse.data.message.currency,
       amount: `${orderResponse.data.message.amount}`,
       order_id: orderResponse.data.message.id,
