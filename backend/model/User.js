@@ -41,8 +41,8 @@ const UserSchema = new mongoose.Schema({
   event: {
     type: String,
   },
-  techtalk: {
-    type: Boolean,
+  Referral: {
+    type: String,
   },
   amount: {
     type: Number,

@@ -9,8 +9,7 @@ exports.capturePayment = async (req, res) => {
 
   console.log("inside capture payment backend");
 
-  const { username, email, phone, registration, event, techtalk, amount } =
-    req.body;
+  const { username, email, phone, registration, event, amount } = req.body;
 
   console.log("the req body is ", req.body);
   console.log("the amount is ", req.body.mybody.amount);
@@ -101,7 +100,8 @@ exports.verifyPayment = async (req, res) => {
       event: req.body.mybody.event,
       event1: req.body.mybody.event1,
       event2: req.body.mybody.event2,
-      techtalk: req.body.mybody.techtalk,
+      // techtalk: req.body.mybody.techtalk,
+      Referral: req.body.mybody.Referral,
       level: req.body.mybody.level,
       amount: parseInt(req.body.mybody.amount),
       razorpay_order_id: razorpay_order_id,
@@ -143,7 +143,7 @@ exports.sendPaymentSuccessEmail = async (req, res) => {
         `${req.body.mybody.event1}`,
         `${req.body.mybody.event2}`,
         `${req.body.mybody.registration}`,
-        `${req.body.mybody.techtalk}`,
+        // `${req.body.mybody.techtalk}`,
         amount / 100,
         orderId,
         paymentId

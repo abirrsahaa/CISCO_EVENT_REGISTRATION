@@ -17,7 +17,7 @@ const Registration1 = () => {
   const [emailError, setEmailError] = useState(null);
   const [eventError, setEventError] = useState(null);
 
-  const [techtalkError, setTechtalkError] = useState(null);
+  // const [techtalkError, setTechtalkError] = useState(null);
 
   const navigate = useNavigate();
   // const registration = "http://localhost:3000/register";
@@ -39,6 +39,8 @@ const Registration1 = () => {
   const [PhoneNumber, setPhoneNumber] = useState("");
   const [RegistrationNumber, setRegistrationNumber] = useState("");
   const [Email, setEmail] = useState("");
+
+  const [Referral, setReferral] = useState("none");
 
   const [university, setuniversity] = useState("");
   const [gender, setgender] = useState("");
@@ -89,7 +91,7 @@ const Registration1 = () => {
           </div>
           <div className="md:w-[416.89px] md:h-[400px] ">
             <div className="w-full h-[50%]   flex justify-center items-center">
-              <div className="w-[50%] h-full  flex flex-col items-center justify-between">
+              <div className="w-[50%] h-full mt-0 md:mt-3  flex flex-col items-center justify-between">
                 <div className="w-full h-[25%] mb-1  flex flex-col gap-1 items-center justify-center">
                   <input
                     type="text"
@@ -167,7 +169,16 @@ const Registration1 = () => {
               </div>
             </div>
             <div className="mt-5 w-full h-[45%] ">
-              <div className="text-[18px] font-benderregular md:text-[16px] flex justify-center items-center text-center md:text-left font-bold px-4 md:pl-2 text-black">
+              <div className="text-[18px]  font-benderregular md:text-[16px] flex flex-col gap-2 justify-center items-center text-center md:text-left font-bold px-4 md:pl-2 text-black">
+                <div className="w-full h-[5%] mb-1  flex flex-col gap-1 items-center justify-center">
+                  <input
+                    type="text"
+                    value={Referral}
+                    placeholder="Referral*"
+                    onChange={(e) => setReferral(e.target.value)}
+                    className="w-[95%] font-benderregular h-[40px] bg-white border-b-2  border-black text-black  p-2"
+                  />
+                </div>
                 Choose Workshop for day 1 and day 2 :
               </div>
               <div className="flex font-benderregular flex-col justify-center items-start">
@@ -181,25 +192,25 @@ const Registration1 = () => {
                         onChange={() => {
                           setselected(index);
                         }}
-                        className="bg-white font-benderregular text-white ml-0"
+                        className="bg-white font-benderregular text-white ml-1"
                       />
-                      <label className="ml-0 font-benderregular text-black">
+                      <label className="ml-2 font-benderregular text-black">
                         {element.content}
                       </label>
                     </div>
                   );
                 })}
               </div>
-              <div className="mt-3">
+              {/* <div className="mt-3 flex justify-start items-center ">
                 <input
                   type="checkbox"
-                  className="bg-white font-benderregular text-white ml-3"
+                  className="bg-white font-benderregular text-white ml-1"
                   onChange={() => setavailed(!availed)}
                 />
                 <label className="ml-3 font-benderregular text-black ">
                   Get access to all the tech talks
                 </label>
-              </div>
+              </div> */}
               {dberror && (
                 <p className="text-red-500 font-benderregular">{dberror}</p>
               )}
@@ -230,7 +241,7 @@ const Registration1 = () => {
               )}
             </div>
           </div>
-          <div className="w-[90%] flex px-0 md:px-3 justify-between  items-center h-[10%] md:h-[15%] absolute bottom-3 ">
+          <div className="w-[90%] flex px-0 md:px-3 justify-between  items-center h-[10%] md:h-[15%] absolute -bottom-3 md:-bottom-5 ">
             <div className="flex justify-center items-center gap-1">
               <span className=" text-[16px] font-benderregular font-semibold md:text-[28px] text-black ">
                 Price -
@@ -246,7 +257,7 @@ const Registration1 = () => {
                 setRegistrationNumberError(null);
                 setEmailError(null);
                 setEventError(null);
-                setTechtalkError(null);
+                // setTechtalkError(null);
                 setdberror(null);
 
                 // appply zod validation here and only after that send the details to the backend
@@ -271,7 +282,7 @@ const Registration1 = () => {
                   event: z.string().optional(),
                   event1: z.string().optional(),
                   event2: z.string().optional(),
-                  techtalk: z.boolean(),
+                  // techtalk: z.boolean(),
                 });
 
                 // first here db call to check whether same username or email already exists or not or even registration number ??
@@ -299,7 +310,7 @@ const Registration1 = () => {
                       phone: PhoneNumber,
                       registration: RegistrationNumber,
                       event: options[selected].content,
-                      techtalk: availed,
+                      // techtalk: availed,
                     }),
                   });
                   const response = await status.json();
@@ -333,7 +344,7 @@ const Registration1 = () => {
                   university: university,
                   gender: gender,
                   event: options[selected].content,
-                  techtalk: availed,
+                  // techtalk: availed,
                   // amount: 500,
                 };
                 let finalBody;
@@ -377,9 +388,9 @@ const Registration1 = () => {
                         setEmailError(parsedInput.error.errors[i].message);
                       }
 
-                      if (parsedInput.error.errors[i].path[0] === "techtalk") {
-                        setTechtalkError(parsedInput.error.errors[i].message);
-                      }
+                      // if (parsedInput.error.errors[i].path[0] === "techtalk") {
+                      //   setTechtalkError(parsedInput.error.errors[i].message);
+                      // }
                     }
                     // for (let i in parsedInput.error.ZodError[0].path) {
                     //   console.log(i);
@@ -399,7 +410,7 @@ const Registration1 = () => {
                     gender,
                     email,
                     event,
-                    techtalk,
+                    // techtalk,
                   } = parsedInput.data;
                   finalBody = {
                     fullname,
@@ -411,7 +422,8 @@ const Registration1 = () => {
                     gender,
                     email,
                     event,
-                    techtalk,
+                    Referral: Referral,
+                    // techtalk,
                     level: "Basic",
                     amount: amount,
                     option: 1,

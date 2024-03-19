@@ -14,7 +14,7 @@ const Registration3 = () => {
   const [emailError, setEmailError] = useState(null);
   const [event1Error, setEvent1Error] = useState(null);
   const [event2Error, setEvent2Error] = useState(null);
-  const [techtalkError, setTechtalkError] = useState(null);
+  // const [techtalkError, setTechtalkError] = useState(null);
   const options1 = [
     {
       content: "Day-1 (Introduction to Cybersecurity and Bug bounty)",
@@ -35,6 +35,7 @@ const Registration3 = () => {
   const [PhoneNumber, setPhoneNumber] = useState("");
   const [RegistrationNumber, setRegistrationNumber] = useState("");
   const [Email, setEmail] = useState("");
+  const [Referral, setReferral] = useState("none");
 
   const [university, setuniversity] = useState("");
   const [gender, setgender] = useState("");
@@ -59,7 +60,7 @@ const Registration3 = () => {
       Email,
       event_day_1: options1[selected1],
       event_day_2: options2[selected2],
-      techtalk: availed,
+      // techtalk: availed,
     };
     console.log("the details of registered user is ", user);
   };
@@ -162,7 +163,16 @@ const Registration3 = () => {
               </div>
             </div>
             <div className="mt-5 w-full h-[45%]">
-              <div className="text-[16px] font-benderregular text-left font-bold pl-2 text-black">
+              <div className="text-[16px] flex flex-col items-center justify-center font-benderregular text-left font-bold pl-2 text-black">
+                <div className="w-full h-[5%] mb-1  flex flex-col gap-1 items-center justify-center">
+                  <input
+                    type="text"
+                    value={Referral}
+                    placeholder="Referral*"
+                    onChange={(e) => setReferral(e.target.value)}
+                    className="w-[95%] font-benderregular h-[40px] bg-white border-b-2  border-black text-black  p-2"
+                  />
+                </div>
                 Choose Workshop for day 1 :
               </div>
               <div className="flex flex-col justify-center items-start">
@@ -208,7 +218,7 @@ const Registration3 = () => {
                   );
                 })}
               </div>
-              <div className="mt-3">
+              {/* <div className="mt-3">
                 <input
                   type="checkbox"
                   className="bg-white font-benderregular text-white"
@@ -217,7 +227,7 @@ const Registration3 = () => {
                 <label className="ml-3 font-benderregular text-black ">
                   Get access to all the tech talks
                 </label>
-              </div>
+              </div> */}
               {dberror && (
                 <p className="text-red-500 font-benderregular">{dberror}</p>
               )}
@@ -253,7 +263,7 @@ const Registration3 = () => {
               )}
             </div>
           </div>
-          <div className="w-[90%] font-benderregular flex px-3 justify-between items-center h-[10%] md:h-[15%] absolute bottom-3 ">
+          <div className="w-[90%] font-benderregular flex px-3 justify-between items-center h-[10%] md:h-[15%] absolute -bottom-3 md:-bottom-5">
             <div className="flex justify-center items-center gap-1">
               <span className=" text-[16px] font-benderregular font-semibold md:text-[28px] text-black ">
                 Price -
@@ -270,7 +280,7 @@ const Registration3 = () => {
                 setEmailError(null);
                 setEvent1Error(null);
                 setEvent2Error(null);
-                setTechtalkError(null);
+                // setTechtalkError(null);
                 setdberror(null);
 
                 // appply zod validation here and only after that send the details to the backend
@@ -295,7 +305,7 @@ const Registration3 = () => {
                   event: z.string().optional(),
                   event1: z.string().optional(),
                   event2: z.string().optional(),
-                  techtalk: z.boolean(),
+                  // techtalk: z.boolean(),
                 });
 
                 // first here db call to check whether same username or email already exists or not or even registration number ??
@@ -330,7 +340,7 @@ const Registration3 = () => {
                       registration: RegistrationNumber,
                       event1: options1[selected1].content,
                       event2: options2[selected2].content,
-                      techtalk: availed,
+                      // techtalk: availed,
                     }),
                   });
                   const response = await status.json();
@@ -365,7 +375,7 @@ const Registration3 = () => {
                   university: university,
                   event1: options1[selected1].content,
                   event2: options2[selected2].content,
-                  techtalk: availed,
+                  // techtalk: availed,
                   // amount: 500,
                 };
                 let finalBody;
@@ -409,9 +419,9 @@ const Registration3 = () => {
                         setEmailError(parsedInput.error.errors[i].message);
                       }
 
-                      if (parsedInput.error.errors[i].path[0] === "techtalk") {
-                        setTechtalkError(parsedInput.error.errors[i].message);
-                      }
+                      // if (parsedInput.error.errors[i].path[0] === "techtalk") {
+                      //   setTechtalkError(parsedInput.error.errors[i].message);
+                      // }
                     }
                     // for (let i in parsedInput.error.ZodError[0].path) {
                     //   console.log(i);
@@ -432,7 +442,7 @@ const Registration3 = () => {
                     email,
                     event1,
                     event2,
-                    techtalk,
+                    // techtalk,
                   } = parsedInput.data;
                   finalBody = {
                     fullname,
@@ -445,7 +455,8 @@ const Registration3 = () => {
                     email,
                     event1,
                     event2,
-                    techtalk,
+                    Referral: Referral,
+                    // techtalk,
                     level: "Enthusiast",
                     amount: amount,
                     option: 3,

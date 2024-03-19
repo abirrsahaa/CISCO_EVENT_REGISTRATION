@@ -50,7 +50,7 @@ app.post("/register", async (req, res) => {
       phoneNumber: req.body.phone,
       RegistrationNumber: req.body.registration,
       event: req.body.event,
-      techtalk: req.body.techtalk,
+      // techtalk: req.body.techtalk,
     });
     res.json(user);
   } catch (error) {

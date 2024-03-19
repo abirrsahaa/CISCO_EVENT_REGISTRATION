@@ -4,7 +4,7 @@ import { useState } from "react";
 // import { slide as Menu } from "react-burger-menu";
 // import Sidebar from "../home/Sidebar/Sidebar";
 
-import lpu from "../assets/LPU-logo-white.png";
+import lpu from "../assets/scse.png";
 
 const Navbar = () => {
   const [show, setshow] = useState(false);

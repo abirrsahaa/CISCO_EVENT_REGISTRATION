@@ -58,13 +58,13 @@ const Footer = () => {
               <IoCallOutline className="text-[#13FBD3]  h-8" />
               <span className="flex font-benderregular items-center justify-center  h-8 pb-1">
                 {" "}
-                +91&nbsp;82385&nbsp;01824 &nbsp;
+                +91&nbsp;82580&nbsp;63058 &nbsp;
               </span>
             </li>
           </ul>
         </div>
         <div className="w-full h-[17%] mt-3 flex justify-center items-center gap-4  md:hidden">
-          <Link to="https://discord.com/invite/BCuFMDzr">
+          <Link to="https://discord.com/invite/y73D7NAn">
             <FaDiscord className="w-8 h-8 text-[#13FBD3]" />
           </Link>
           <Link to="https://twitter.com/XIgen48327">
@@ -96,7 +96,7 @@ const Footer = () => {
             thus encourage peer-based practical learning
           </div>
           <div className="w-[90%] h-[30%] flex justify-start items-center gap-4 ">
-            <Link to="https://discord.com/invite/BCuFMDzr">
+            <Link to="https://discord.com/invite/y73D7NAn">
               <FaDiscord className="w-8 h-8 text-[#13FBD3]" />
             </Link>
             <Link to="https://twitter.com/XIgen48327">
@@ -148,7 +148,7 @@ const Footer = () => {
               <IoCallOutline className="text-[#13FBD3]  h-8" />
               <span className="flex font-benderregular items-center justify-center  h-8 pb-1">
                 {" "}
-                +91&nbsp;82385&nbsp;01824 &nbsp;
+                +91&nbsp;82580&nbsp;63058 &nbsp;
               </span>
             </li>
           </ul>

@@ -7,7 +7,7 @@ exports.paymentSuccessEmail = (
   event1,
   event2,
   registration,
-  techtalk,
+
   amount,
   orderId,
   paymentId
