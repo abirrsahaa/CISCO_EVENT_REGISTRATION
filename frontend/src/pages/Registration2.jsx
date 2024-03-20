@@ -35,7 +35,7 @@ const Registration2 = () => {
   const [RegistrationNumber, setRegistrationNumber] = useState("");
   const [Email, setEmail] = useState("");
 
-  const [Referral, setReferral] = useState("none");
+  const [Referral, setReferral] = useState("");
 
   const [university, setuniversity] = useState("");
   const [gender, setgender] = useState("");

@@ -43,6 +43,7 @@ const UserSchema = new mongoose.Schema({
   },
   Referral: {
     type: String,
+    default: "none",
   },
   amount: {
     type: Number,
