@@ -21,17 +21,17 @@ exports.capturePayment = async (req, res) => {
   const option = req.body.mybody.option;
   console.log(typeof option);
   console.log(option);
-  if (option == 1 && totalAmount !== 399) {
+  if (option == 1 && totalAmount !== 249) {
     console.log("laude paisa nahi badalna");
     return;
   }
 
-  if (option == 2 && totalAmount !== 499) {
+  if (option == 2 && totalAmount !== 349) {
     console.log("laude paisa nahi badalna");
     return;
   }
 
-  if (option == 3 && totalAmount !== 999) {
+  if (option == 3 && totalAmount !== 649) {
     console.log("laude paisa nahi badalna");
     return;
   }

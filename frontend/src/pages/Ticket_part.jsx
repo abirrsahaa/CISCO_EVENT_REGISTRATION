@@ -17,9 +17,13 @@ const Ticket_part = () => {
           <div className="md:w-[800px] text-center w-[400px] h-[120px] px-2 mx-2   flex items-center justify-center text-[#13FBD3] md:text-[48px] text-[28px] font-benderregular font-bold">
             Get Yourself Registered for LPU's Biggest Cyber Security Conclave!
           </div>
-          <p className="md:w-[674px] mt-8 md:h-[28px] w-[350px] text-center tracking-tighter  flex items-center justify-center text-[16px] md:text-[20px] text-[#F3F6FF] font-benderlight font-normal ">
+          <p className="md:w-[674px] mt-8 md:h-[28px] w-[350px] text-center   flex items-center justify-center text-[16px] md:text-[20px] text-[#F3F6FF] font-benderlight font-normal ">
             Enhance Your Cybersecurity Skills and Stay Ahead of
             Emerging Threats.
+          </p>
+          <p className="md:w-[674px] mt-8 md:h-[28px] w-[350px] text-center tracking-tighter  flex items-center justify-center text-[16px] md:text-[20px] text-[#F3F6FF] font-benderlight font-normal ">
+            This Holi colour yourself with the shades of Cybersecurity. Prices
+            dropped for a limited time.!!
           </p>
         </div>
         <div className="w-[100%]   rounded-xl flex items-center justify-center  md:min-h-[450px] ">
@@ -34,14 +38,17 @@ const Ticket_part = () => {
                 />
               </div>
               <div className="w-full h-[55%] p-2 bg-[#09131D] flex flex-col  roundedlg">
-                <div className="w-full h-[20%]  flex justify-between ">
-                  <div className="h-full w-[45%]   ml-7 flex items-center justify-start font-benderregular font-bold text-[28px] text-[#13FBD3]">
+                <div className="w-full h-[20%]  flex justify-between items-center">
+                  <div className="h-full w-[35%]   ml-2 flex items-center justify-start font-benderregular font-bold text-[28px] text-[#13FBD3]">
                     Basic
                   </div>
-                  <div className="h-full w-[25%]  mr-6 flex items-center justify-start font-benderregular font-semibold text-[18px] text-white">
+                  <div className="h-full  w-[55%]  mr-2 flex items-center justify-start font-benderregular font-semibold text-[18px] text-white">
                     Price:&nbsp;{" "}
-                    <span className="text-[#00B3FF] font-benderregular font-bold">
+                    <span className="text-[#00B3FF] font-benderregular font-bold line-through">
                       399
+                    </span>
+                    <span className="text-[#00B3FF] font-benderregular font-bold ">
+                      &nbsp;&nbsp;249
                     </span>
                   </div>
                 </div>
@@ -81,14 +88,17 @@ const Ticket_part = () => {
                 />
               </div>
               <div className="w-full h-[55%] p-2 bg-[#09131D] flex flex-col  roundedlg">
-                <div className="w-full h-[20%]  flex justify-between ">
-                  <div className="h-full w-[45%]   ml-7 flex items-center justify-start font-benderregular  font-bold text-[28px] text-[#13FBD3]">
+                <div className="w-full  h-[20%]  flex justify-between ">
+                  <div className="h-full w-[35%]    ml-2 flex items-center justify-start font-benderregular  font-bold text-[28px] text-[#13FBD3]">
                     Explorer
                   </div>
-                  <div className="h-full w-[25%]  mr-6 flex items-center justify-start font-benderregular font-semibold text-[18px] text-white">
+                  <div className="h-full w-[45%]   mr-2 flex items-center justify-end font-benderregular font-semibold text-[18px] text-white">
                     Price:&nbsp;{" "}
-                    <span className="text-[#00B3FF] font-benderregular font-bold">
+                    <span className="text-[#00B3FF] font-benderregular font-bold line-through">
                       499
+                    </span>
+                    <span className="text-[#00B3FF] font-benderregular font-bold ">
+                      &nbsp;&nbsp;349
                     </span>
                   </div>
                 </div>
@@ -140,13 +150,16 @@ const Ticket_part = () => {
               </div>
               <div className="w-full h-[55%] p-2 bg-[#09131D] flex flex-col  roundedlg">
                 <div className="w-full h-[20%]  flex justify-between ">
-                  <div className="h-full w-[25%]  ml-14 flex items-center justify-center font-benderregular font-bold text-[28px] text-[#13FBD3]">
+                  <div className="h-full  w-[35%]  ml-5 flex items-center justify-center font-benderregular font-bold text-[28px] text-[#13FBD3]">
                     Enthusiast
                   </div>
-                  <div className="h-full w-[25%]  mr-6 flex items-center justify-start font-benderregular font-semibold text-[18px] text-white">
+                  <div className="h-full w-[45%]   flex items-center justify-start font-benderregular font-semibold text-[18px] text-white">
                     Price:&nbsp;{" "}
-                    <span className="text-[#00B3FF] font-benderregular font-bold">
+                    <span className="text-[#00B3FF] font-benderregular line-through font-bold">
                       999
+                    </span>
+                    <span className="text-[#00B3FF] font-benderregular font-bold ">
+                      &nbsp;&nbsp;649
                     </span>
                   </div>
                 </div>
