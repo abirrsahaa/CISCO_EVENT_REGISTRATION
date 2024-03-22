@@ -268,8 +268,8 @@ const Registration3 = () => {
               <span className=" text-[16px] font-benderregular font-semibold md:text-[28px] text-black ">
                 Price -
               </span>
-              <span className="text-black font-benderregular text-[20px] md:text-[32px] mb-1  font-bold">
-                &nbsp;Rs.649
+              <span className="text-black font-benderregular text-[14px] md:text-[32px] mb-1  font-bold">
+                &nbsp;<strike>Rs.999</strike>&nbsp;Rs.649
               </span>
             </div>
             <button

@@ -246,8 +246,8 @@ const Registration1 = () => {
               <span className=" text-[16px] font-benderregular font-semibold md:text-[28px] text-black ">
                 Price -
               </span>
-              <span className="text-black font-benderregular text-[20px] md:text-[32px] mb-1  font-bold">
-                &nbsp;Rs.399
+              <span className="text-black font-benderregular text-[16px] md:text-[32px] mb-1  font-bold">
+                &nbsp;<strike>Rs.399</strike>&nbsp;Rs.249
               </span>
             </div>
             <button
@@ -399,7 +399,7 @@ const Registration1 = () => {
                     return;
                   }
                   console.log("parsedInput", parsedInput);
-                  const amount = 399;
+                  const amount = 249;
                   const {
                     fullname,
                     phone,
