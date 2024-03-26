@@ -6,12 +6,14 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Registration1 from "./pages/Registration1.jsx";
 import Registration2 from "./pages/Registration2.jsx";
 import Registration3 from "./pages/Registration3.jsx";
+import Registration4 from "./pages/Registration4.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
   { path: "/registrationBasic", element: <Registration1 /> },
   { path: "/registrationExplorer", element: <Registration2 /> },
   { path: "/registrationEnthusiast", element: <Registration3 /> },
+  { path: "/registrationStarter", element: <Registration4 /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

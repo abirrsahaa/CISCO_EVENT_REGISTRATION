@@ -35,7 +35,11 @@ exports.capturePayment = async (req, res) => {
     console.log("laude paisa nahi badalna");
     return;
   }
-  if (option == 1 || option == 2 || option == 3) {
+  if (option == 4 && totalAmount !== 179) {
+    console.log("laude paisa nahi badalna");
+    return;
+  }
+  if (option == 1 || option == 2 || option == 3 || option == 4) {
     console.log("option toh sahi hai");
   } else {
     console.log("option nahi hai");

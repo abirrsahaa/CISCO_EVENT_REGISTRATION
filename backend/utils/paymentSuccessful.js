@@ -92,6 +92,8 @@ exports.paymentSuccessEmail = (
                     <p>Event1: ${event}</p>
                     <p>Event2: ${event1}</p>
                     <p>Event3: ${event2}</p>
+
+                    <p>For starter you are only eligible for tech talks </p>
                  
               </div>
               <div class="support">If you have any questions or need assistance, please feel free to reach out to us at <a

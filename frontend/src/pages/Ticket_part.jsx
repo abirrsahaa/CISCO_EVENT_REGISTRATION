@@ -5,13 +5,14 @@ import { Link } from "react-router-dom";
 import basic from "../assets/1.png";
 import explorer from "../assets/2.png";
 import enthusiast from "../assets/3.png";
+import starter from "../assets/starter.png";
 
 const Ticket_part = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
     // bg-[#121E2C]
-    <div className="w-[100vw]  md:m-0 h-[1700px]   md:h-[900px]    ">
+    <div className="w-[100vw]  md:m-0 h-[2050px]  md:h-[900px]    ">
       <div className="w-[100%] md:h-full   h-[1700px] flex flex-col items-center justify-between md:justify-center ">
         <div className="w-[100%] rounded-xl   flex flex-col items-center justify-center gap-4   h-[35%]">
           <div className="md:w-[800px] text-center w-[400px] h-[120px] px-2 mx-2   flex items-center justify-center text-[#13FBD3] md:text-[48px] text-[28px] font-benderregular font-bold">
@@ -26,10 +27,10 @@ const Ticket_part = () => {
             dropped for a limited time.!!
           </p> */}
         </div>
-        <div className="w-[100%]   rounded-xl flex items-center justify-center  md:min-h-[450px] ">
-          <div className="md:w-[76%] md:h-[95%] h-full w-full rounded-xl flex flex-col md:flex md:flex-row justify-between items-center">
+        <div className="w-[100%]   rounded-xl  flex items-center justify-center  md:min-h-[450px] ">
+          <div className="md:w-[96%] md:h-[95%]   h-full w-full rounded-xl flex flex-col md:flex md:flex-row justify-between items-center">
             {/* yeh ak component hoga  */}
-            <div className="md:h-[98%] w-[78%]  h-[440px] m-2  rounded-2xl md:w-[28%] overflow-hidden">
+            <div className="md:h-[98%] w-[78%] opacity-10    h-[440px] m-2  rounded-2xl md:w-[24%] overflow-hidden">
               <div className="w-[300px] md:w-full h-[200px] bg-gray-100 ">
                 <img
                   src={basic}
@@ -68,17 +69,17 @@ const Ticket_part = () => {
                 </div>
                 <div className="w-full h-[30%]  flex items-center justify-center">
                   <Link
-                    to="/registrationBasic"
+                    to="#"
                     className="w-[90%] flex items-center justify-center  h-[55px] hover:cursor-pointer"
                   >
                     <button className="w-[80%] flex font-benderregular items-center justify-center h-[70%] bg-gradient-to-r  from-[#00B3FF] to-[#2CE1C0] rounded-3xl text-black">
-                      Register
+                      Sold Out!!!!
                     </button>
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="md:h-[98%] w-[78%]  h-[440px] m-2  rounded-2xl md:w-[28%] overflow-hidden">
+            <div className="md:h-[98%] w-[78%]  h-[440px] m-2  rounded-2xl md:w-[24%] overflow-hidden">
               <div className="w-[300px] md:w-full h-[200px] bg-gray-100 ">
                 {" "}
                 <img
@@ -140,7 +141,7 @@ const Ticket_part = () => {
                 </div>
               </div>
             </div>
-            <div className="md:h-[98%] w-[78%]   h-[440px] m-2  rounded-2xl md:w-[28%] overflow-hidden">
+            <div className="md:h-[98%] w-[78%] opacity-10   h-[440px] m-2  rounded-2xl md:w-[24%] overflow-hidden">
               <div className="w-[300px] md:w-full h-[200px] bg-gray-100 ">
                 <img
                   src={enthusiast}
@@ -191,7 +192,68 @@ const Ticket_part = () => {
                 </div>
                 <div className="w-full h-[30%]  flex items-center justify-center">
                   <Link
-                    to="/registrationEnthusiast"
+                    to="#"
+                    className="w-[90%] flex items-center justify-center  h-[55px] hover:cursor-pointer"
+                  >
+                    <button className="w-[80%] font-benderlight flex items-center justify-center h-[70%] bg-gradient-to-r  from-[#00B3FF] to-[#2CE1C0] rounded-3xl text-black">
+                      Sold Out!!!!
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="md:h-[98%] w-[78%]   h-[440px] m-2  rounded-2xl md:w-[24%] overflow-hidden">
+              <div className="w-[300px] md:w-full h-[200px] bg-gray-100 ">
+                <img
+                  src={starter}
+                  alt="enthusiast"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+              <div className="w-full h-[55%] p-2 bg-[#09131D] flex flex-col  roundedlg">
+                <div className="w-full h-[20%]  flex justify-between ">
+                  <div className="h-full  w-[35%]  ml-5 flex items-center justify-center font-benderregular font-bold text-[28px] text-[#13FBD3]">
+                    Starter
+                  </div>
+                  <div className="h-full w-[50%]   flex items-center justify-end pr-1 font-benderregular font-semibold text-[18px] text-white">
+                    Price:&nbsp;{" "}
+                    <span className="text-[#00B3FF] font-benderregular  font-bold">
+                      &nbsp;179&nbsp;
+                    </span>
+                    {/* <span className="text-[#00B3FF] font-benderregular font-bold  ">
+                      &nbsp;&nbsp;649
+                    </span> */}
+                  </div>
+                </div>
+                <div className="w-full h-[50%]  p-2 flex flex-col items-center justify-between  ">
+                  <div className="w-full h-[25%]  ml-10 flex items-center justify-start mt-2 font-benderregular font-bold text-[20px] text-[white] ">
+                    Workshop Offerings:
+                  </div>
+                  <div className="w-full h-[55%]  ml-1 text-left font-benderlight font-normal text-[14px] text-white">
+                    <span className="text-[#13FBD3] font-benderlight">
+                      {" "}
+                      &#10004; &nbsp;
+                    </span>
+                    check out perks you will{" "}
+                    <span className="text-[#13FBD3] font-benderlight">
+                      crave
+                    </span>{" "}
+                    for<br></br>
+                    <span className="text-[#13FBD3] font-benderlight">
+                      {" "}
+                      &#10004; &nbsp;
+                    </span>
+                    click on
+                    <span className="text-[#13FBD3] font-benderlight">
+                      {" "}
+                      Register
+                    </span>
+                    <br></br>
+                  </div>
+                </div>
+                <div className="w-full h-[30%]  flex items-center justify-center">
+                  <Link
+                    to="/registrationStarter"
                     className="w-[90%] flex items-center justify-center  h-[55px] hover:cursor-pointer"
                   >
                     <button className="w-[80%] font-benderlight flex items-center justify-center h-[70%] bg-gradient-to-r  from-[#00B3FF] to-[#2CE1C0] rounded-3xl text-black">
