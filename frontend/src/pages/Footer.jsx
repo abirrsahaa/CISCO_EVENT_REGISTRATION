@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <>
       <div className="w-[100vw] h-[70vh] md:h-[50vh] md:flex md:items-center md:gap-2 md:pt-10 md:justify-center bg-gradient-to-b  from-[#09131D] to-[#121E2C]">
-        <div className="w-full h-[13%] mx-1 md:hidden block">
+        {/* <div className="w-full h-[13%] mx-1 md:hidden block">
           <div className="w-[20%] h-[100%]">
             <img
               src={cisco}
@@ -20,9 +20,9 @@ const Footer = () => {
               className="w-full h-full object-cover object-center"
             />
           </div>
-        </div>
-        <div className="w-full h-[40%] md:hidden block">
-          <div className="text-3xl font-benderregular font-bold mx-3 mb-2 text-[#13FBD3] flex items-center justify-start ">
+        </div> */}
+        <div className="w-full h-[60%] md:hidden block">
+          <div className="text-3xl font-benderregular font-bold mx-3 mb-1 text-[#13FBD3] flex items-center justify-start ">
             Quick Links
           </div>
           <ul className="flex gap-2 mx-2 pl-2 mt-2 tracking-tighter text-sm">
@@ -36,8 +36,14 @@ const Footer = () => {
               <Link href="https://cisco-payments.sabal.in/">
                 <li>Register</li>
               </Link>
-              <Link href="https://ciscoxlpuigen.netlify.app/Blogs">
-                <li>Blog</li>
+              <Link href="https://ciscoxlpuigen.co.in/privacy-policy.php">
+                <li>Privacy Policy</li>
+              </Link>
+              <Link href="https://ciscoxlpuigen.co.in/terms-and-conditions.php">
+                <li>T&c</li>
+              </Link>
+              <Link href="https://ciscoxlpuigen.co.in/refund-policy.php">
+                <li>Refund Policy</li>
               </Link>
             </div>
           </ul>
@@ -63,7 +69,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="w-full h-[17%] mt-3 flex justify-center items-center gap-4  md:hidden">
+        <div className="w-full h-[17%]  flex justify-center items-start gap-4  md:hidden">
           <Link to="https://discord.com/invite/y73D7NAn">
             <FaDiscord className="w-8 h-8 text-[#13FBD3]" />
           </Link>
@@ -78,7 +84,7 @@ const Footer = () => {
           </Link>
         </div>
         <div className="hidden md:flex h-[90%] w-[40%] p-1  flex-col items-center justify-center gap-2 ">
-          <div className="w-[90%] h-[20%] ">
+          {/* <div className="w-[90%] h-[20%] ">
             {" "}
             <div className="w-[20%] h-[100%]">
               <img
@@ -87,13 +93,13 @@ const Footer = () => {
                 className="w-full h-full object-cover object-center"
               />
             </div>
-          </div>
+          </div> */}
           <div className="w-[90%] font-benderregular h-[40%]  flex justify-start items-center text-left ">
             {" "}
-            The Cisco x LPU iGen Community is an initiative undertaken by the
-            tech enthusiasts at Lovely Professional University, with an
-            objective to revolutionize the way we approach tech education and
-            thus encourage peer-based practical learning
+            The iGen Community is an initiative undertaken by the tech
+            enthusiasts at Lovely Professional University, with an objective to
+            revolutionize the way we approach tech education and thus encourage
+            peer-based practical learning
           </div>
           <div className="w-[90%] h-[30%] flex justify-start items-center gap-4 ">
             <Link to="https://discord.com/invite/y73D7NAn">
@@ -112,7 +118,7 @@ const Footer = () => {
         </div>
         <div className="hidden md:block h-[90%] w-[25%] ">
           {" "}
-          <div className="text-5xl font-benderregular font-bold mx-3 mb-16 text-[#13FBD3] ">
+          <div className="text-5xl font-benderregular font-bold mx-3 mb-2 text-[#13FBD3] ">
             Quick Links
           </div>
           <ul className="flex gap-16 mx-3 tracking-tighter text-xl mt-4">
@@ -126,8 +132,14 @@ const Footer = () => {
               <Link href="https://cisco-payments.sabal.in/">
                 <li>Register</li>
               </Link>
-              <Link href="https://ciscoxlpuigen.netlify.app/Blogs">
-                <li>Blog</li>
+              <Link href="https://ciscoxlpuigen.co.in/privacy-policy.php">
+                <li>Privacy Policy</li>
+              </Link>
+              <Link href="https://ciscoxlpuigen.co.in/terms-and-conditions.php">
+                <li>T&c</li>
+              </Link>
+              <Link href="https://ciscoxlpuigen.co.in/refund-policy.php">
+                <li>Refund Policy</li>
               </Link>
             </div>
           </ul>

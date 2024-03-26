@@ -21,10 +21,10 @@ const Ticket_part = () => {
             Enhance Your Cybersecurity Skills and Stay Ahead of
             Emerging Threats.
           </p>
-          <p className="md:w-[674px] text-yellow-500  mt-8 md:h-[28px] w-[350px] text-center tracking-tighter  flex items-center justify-center text-[16px] md:text-[20px]  font-benderlight font-normal ">
+          {/* <p className="md:w-[674px] text-yellow-500  mt-8 md:h-[28px] w-[350px] text-center tracking-tighter  flex items-center justify-center text-[16px] md:text-[20px]  font-benderlight font-normal ">
             This Holi colour yourself with the shades of Cybersecurity. Prices
             dropped for a limited time.!!
-          </p>
+          </p> */}
         </div>
         <div className="w-[100%]   rounded-xl flex items-center justify-center  md:min-h-[450px] ">
           <div className="md:w-[76%] md:h-[95%] h-full w-full rounded-xl flex flex-col md:flex md:flex-row justify-between items-center">
@@ -42,14 +42,14 @@ const Ticket_part = () => {
                   <div className="h-full w-[35%]   ml-2 flex items-center justify-start font-benderregular font-bold text-[28px] text-[#13FBD3]">
                     Basic
                   </div>
-                  <div className="h-full  w-[55%]  mr-2 flex items-center justify-start font-benderregular font-semibold text-[18px] text-white">
+                  <div className="h-full  w-[55%]  mr-2 flex items-center justify-end pr-1 font-benderregular font-semibold text-[18px] text-white">
                     Price:&nbsp;{" "}
-                    <span className="text-[#00B3FF] font-benderregular font-bold line-through">
+                    <span className="text-[#00B3FF] font-benderregular font-bold ">
                       &nbsp;399&nbsp;
                     </span>
-                    <span className="text-[#00B3FF] font-benderregular font-bold ">
+                    {/* <span className="text-[#00B3FF] font-benderregular font-bold ">
                       &nbsp;&nbsp;249
-                    </span>
+                    </span> */}
                   </div>
                 </div>
                 <div className="w-full h-[50%]  p-2 flex flex-col items-center justify-between  ">
@@ -92,14 +92,14 @@ const Ticket_part = () => {
                   <div className="h-full w-[35%]    ml-2 flex items-center justify-start font-benderregular  font-bold text-[28px] text-[#13FBD3]">
                     Explorer
                   </div>
-                  <div className="h-full w-[45%]   mr-2 flex items-center justify-end font-benderregular font-semibold text-[18px] text-white">
+                  <div className="h-full w-[45%]   mr-2 flex items-center justify-end pr-1 font-benderregular font-semibold text-[18px] text-white">
                     Price:&nbsp;{" "}
-                    <span className="text-[#00B3FF] font-benderregular font-bold line-through">
+                    <span className="text-[#00B3FF] font-benderregular font-bold ">
                       &nbsp;499&nbsp;
                     </span>
-                    <span className="text-[#00B3FF] font-benderregular font-bold ">
+                    {/* <span className="text-[#00B3FF] font-benderregular font-bold ">
                       &nbsp;&nbsp;349
-                    </span>
+                    </span> */}
                   </div>
                 </div>
                 <div className="w-full h-[50%]  p-2 flex flex-col items-center justify-between  ">
@@ -153,14 +153,14 @@ const Ticket_part = () => {
                   <div className="h-full  w-[35%]  ml-5 flex items-center justify-center font-benderregular font-bold text-[28px] text-[#13FBD3]">
                     Enthusiast
                   </div>
-                  <div className="h-full w-[50%]   flex items-center justify-start font-benderregular font-semibold text-[18px] text-white">
+                  <div className="h-full w-[50%]   flex items-center justify-end pr-1 font-benderregular font-semibold text-[18px] text-white">
                     Price:&nbsp;{" "}
-                    <span className="text-[#00B3FF] font-benderregular line-through font-bold">
+                    <span className="text-[#00B3FF] font-benderregular  font-bold">
                       &nbsp;999&nbsp;
                     </span>
-                    <span className="text-[#00B3FF] font-benderregular font-bold  ">
+                    {/* <span className="text-[#00B3FF] font-benderregular font-bold  ">
                       &nbsp;&nbsp;649
-                    </span>
+                    </span> */}
                   </div>
                 </div>
                 <div className="w-full h-[50%]  p-2 flex flex-col items-center justify-between  ">

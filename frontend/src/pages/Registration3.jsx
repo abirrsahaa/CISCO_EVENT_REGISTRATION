@@ -269,7 +269,7 @@ const Registration3 = () => {
                 Price -
               </span>
               <span className="text-black font-benderregular text-[14px] md:text-[32px] mb-1  font-bold">
-                &nbsp;<strike>Rs.999</strike>&nbsp;Rs.649
+                &nbsp;Rs.999
               </span>
             </div>
             <button
@@ -430,7 +430,7 @@ const Registration3 = () => {
                     return;
                   }
                   console.log("parsedInput", parsedInput);
-                  const amount = 649;
+                  const amount = 999;
                   const {
                     fullname,
                     phone,

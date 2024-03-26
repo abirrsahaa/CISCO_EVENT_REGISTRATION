@@ -21,6 +21,7 @@ const corsOptions = {
 const express = require("express");
 const cors = require("cors");
 const dbConnect = require("./db/index");
+const path = require("path");
 const User = require("./model/User");
 const app = express();
 app.use(cors(corsOptions));
