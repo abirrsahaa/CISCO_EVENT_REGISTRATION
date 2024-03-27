@@ -141,7 +141,7 @@ const Ticket_part = () => {
                 </div>
               </div>
             </div>
-            <div className="md:h-[98%] w-[78%] opacity-10   h-[440px] m-2  rounded-2xl md:w-[24%] overflow-hidden">
+            <div className="md:h-[98%] w-[78%]    h-[440px] m-2  rounded-2xl md:w-[24%] overflow-hidden">
               <div className="w-[300px] md:w-full h-[200px] bg-gray-100 ">
                 <img
                   src={enthusiast}
@@ -192,11 +192,11 @@ const Ticket_part = () => {
                 </div>
                 <div className="w-full h-[30%]  flex items-center justify-center">
                   <Link
-                    to="#"
+                    to="/registrationEnthusiast"
                     className="w-[90%] flex items-center justify-center  h-[55px] hover:cursor-pointer"
                   >
-                    <button className="w-[80%] font-benderlight flex items-center justify-center h-[70%] bg-gradient-to-r  from-[#00B3FF] to-[#2CE1C0] rounded-3xl text-black">
-                      Sold Out!!!!
+                    <button className="w-[80%] font-benderlight font-bold flex items-center justify-center h-[70%] bg-gradient-to-r  from-[#00B3FF] to-[#2CE1C0] rounded-3xl text-black">
+                      Register
                     </button>
                   </Link>
                 </div>
@@ -256,7 +256,7 @@ const Ticket_part = () => {
                     to="/registrationStarter"
                     className="w-[90%] flex items-center justify-center  h-[55px] hover:cursor-pointer"
                   >
-                    <button className="w-[80%] font-benderlight flex items-center justify-center h-[70%] bg-gradient-to-r  from-[#00B3FF] to-[#2CE1C0] rounded-3xl text-black">
+                    <button className="w-[80%] font-bold font-benderlight flex items-center justify-center h-[70%] bg-gradient-to-r  from-[#00B3FF] to-[#2CE1C0] rounded-3xl text-black">
                       Register
                     </button>
                   </Link>

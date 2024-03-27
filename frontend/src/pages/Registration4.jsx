@@ -64,7 +64,7 @@ const Registration4 = () => {
             Register For Starter Membership
           </div>
           <div className="md:w-[416.89px] md:h-[315.23px]  ">
-            <div className="w-full h-[50%]  flex justify-center items-center">
+            <div className="w-full h-[60%]  flex justify-center items-center">
               <div className="w-[50%] h-full  flex flex-col items-center justify-between">
                 <div className="w-full h-[25%] mb-1  flex flex-col gap-1 items-center justify-center">
                   <input

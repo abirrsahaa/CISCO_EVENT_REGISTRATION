@@ -16,7 +16,8 @@ const Registration2 = () => {
   // const [techtalkError, setTechtalkError] = useState(null);
   const options1 = [
     {
-      content: "Day-1 (Introduction to Cybersecurity and Bug bounty)",
+      content:
+        "Day-1 (Introduction to Cybersecurity and Bug bounty)(BOOKED!!!)",
     },
     {
       content: "Day-1 (Understanding malware, and basic malware analysis)",
@@ -184,7 +185,7 @@ const Registration2 = () => {
                         value={index}
                         checked={selected1 === index}
                         onChange={() => {
-                          setselected1(index);
+                          index != 0 && setselected1(index);
                         }}
                         className="bg-white text-white"
                       />
