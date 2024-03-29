@@ -30,7 +30,7 @@ const Ticket_part = () => {
         <div className="w-[100%]   rounded-xl  flex items-center justify-center  md:min-h-[450px] ">
           <div className="md:w-[96%] md:h-[95%]   h-full w-full rounded-xl flex flex-col md:flex md:flex-row justify-between items-center">
             {/* yeh ak component hoga  */}
-            <div className="md:h-[98%] w-[78%] opacity-10    h-[440px] m-2  rounded-2xl md:w-[24%] overflow-hidden">
+            <div className="md:h-[98%] w-[78%]    h-[440px] m-2  rounded-2xl md:w-[24%] overflow-hidden">
               <div className="w-[300px] md:w-full h-[200px] bg-gray-100 ">
                 <img
                   src={basic}
@@ -69,17 +69,17 @@ const Ticket_part = () => {
                 </div>
                 <div className="w-full h-[30%]  flex items-center justify-center">
                   <Link
-                    to="#"
+                    to="/registrationBasic"
                     className="w-[90%] flex items-center justify-center  h-[55px] hover:cursor-pointer"
                   >
                     <button className="w-[80%] flex font-benderregular items-center justify-center h-[70%] bg-gradient-to-r  from-[#00B3FF] to-[#2CE1C0] rounded-3xl text-black">
-                      Sold Out!!!!
+                      Register
                     </button>
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="md:h-[98%] w-[78%]  h-[440px] m-2  rounded-2xl md:w-[24%] overflow-hidden">
+            <div className="md:h-[98%] w-[78%] opacity-20  h-[440px] m-2  rounded-2xl md:w-[24%] overflow-hidden">
               <div className="w-[300px] md:w-full h-[200px] bg-gray-100 ">
                 {" "}
                 <img
@@ -131,17 +131,17 @@ const Ticket_part = () => {
                 </div>
                 <div className="w-full h-[30%]  flex items-center justify-center">
                   <Link
-                    to="/registrationExplorer"
+                    to="#"
                     className="w-[90%] flex items-center justify-center  h-[55px] hover:cursor-pointer"
                   >
                     <button className="w-[80%] flex items-center justify-center h-[70%] font-benderregular bg-gradient-to-r  from-[#00B3FF] to-[#2CE1C0] rounded-3xl text-black">
-                      Register
+                      Sold Out!!!!
                     </button>
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="md:h-[98%] w-[78%]    h-[440px] m-2  rounded-2xl md:w-[24%] overflow-hidden">
+            <div className="md:h-[98%] w-[78%] opacity-20    h-[440px] m-2  rounded-2xl md:w-[24%] overflow-hidden">
               <div className="w-[300px] md:w-full h-[200px] bg-gray-100 ">
                 <img
                   src={enthusiast}
@@ -149,7 +149,7 @@ const Ticket_part = () => {
                   className="w-full h-full object-cover object-center"
                 />
               </div>
-              <div className="w-full h-[55%] p-2 bg-[#09131D] flex flex-col  roundedlg">
+              <div className="w-full h-[55%]  p-2 bg-[#09131D] flex flex-col  roundedlg">
                 <div className="w-full h-[20%]  flex justify-between ">
                   <div className="h-full  w-[35%]  ml-5 flex items-center justify-center font-benderregular font-bold text-[28px] text-[#13FBD3]">
                     Enthusiast
@@ -192,11 +192,11 @@ const Ticket_part = () => {
                 </div>
                 <div className="w-full h-[30%]  flex items-center justify-center">
                   <Link
-                    to="/registrationEnthusiast"
+                    to="#"
                     className="w-[90%] flex items-center justify-center  h-[55px] hover:cursor-pointer"
                   >
                     <button className="w-[80%] font-benderlight font-bold flex items-center justify-center h-[70%] bg-gradient-to-r  from-[#00B3FF] to-[#2CE1C0] rounded-3xl text-black">
-                      Register
+                      Sold Out!!!!
                     </button>
                   </Link>
                 </div>

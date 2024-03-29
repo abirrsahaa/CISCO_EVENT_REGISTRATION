@@ -23,15 +23,6 @@ const Registration1 = () => {
   // const registration = "http://localhost:3000/register";
   const options = [
     {
-      content: "Day-1 (Introduction to Cybersecurity and Bug bounty)",
-    },
-    {
-      content: "Day-1 (Understanding malware, and basic malware analysis)",
-    },
-    {
-      content: "Day-2 (Introduction to Pentesting and Android App pentest)",
-    },
-    {
       content: "Day-2 (Introduction to blockchain and Threat intelligence)",
     },
   ];
@@ -174,7 +165,7 @@ const Registration1 = () => {
                   <input
                     type="text"
                     value={Referral}
-                    placeholder="Referral*"
+                    placeholder="Referral"
                     onChange={(e) => setReferral(e.target.value)}
                     className="w-[95%] font-benderregular h-[40px] bg-white border-b-2  border-black text-black  p-2"
                   />

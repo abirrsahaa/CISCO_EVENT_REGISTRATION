@@ -148,7 +148,7 @@ const Registration4 = () => {
                   <input
                     type="text"
                     value={Referral}
-                    placeholder="Referral*"
+                    placeholder="Referral"
                     onChange={(e) => setReferral(e.target.value)}
                     className="w-[95%] font-benderregular h-[40px] bg-white border-b-2  border-black text-black  p-2"
                   />

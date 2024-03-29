@@ -208,7 +208,7 @@ const Registration2 = () => {
                         value={index}
                         checked={selected2 === index}
                         onChange={() => {
-                          setselected2(index);
+                          index != 0 && setselected2(index);
                         }}
                         className="bg-white font-benderregular text-white"
                       />
