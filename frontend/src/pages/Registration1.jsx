@@ -58,8 +58,8 @@ const Registration1 = () => {
     getting();
   }, []);
 
-  const checking_api = "https://cisco-payments.sabal.in/checking";
-  // const checking_api = "http://localhost:3000/checking";
+  // const checking_api = "https://cisco-payments.sabal.in/checking";
+  const checking_api = "http://localhost:3000/checking";
 
   return (
     <div className="w-[100vw] h-[1000px] md:h-[800px] md:[100vh] flex flex-col md:flex md:flex-row items-center justify-center overflow-hidden rounded-3xl">

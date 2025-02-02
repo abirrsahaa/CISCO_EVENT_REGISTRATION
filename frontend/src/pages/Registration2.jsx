@@ -51,8 +51,8 @@ const Registration2 = () => {
     console.log("the selected option for day 2  is ", options2[selected2]);
     console.log("the availed option is ", availed);
   }, [selected1, selected2, availed]);
-  const checking_api = "https://cisco-payments.sabal.in/checking";
-  // const checking_api = "http://localhost:3000/checking";
+  // const checking_api = "https://cisco-payments.sabal.in/checking";
+  const checking_api = "http://localhost:3000/checking";
   const submithandler = () => {
     const user = {
       fullname,

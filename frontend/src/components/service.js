@@ -120,7 +120,7 @@ async function verifyPayment(bodyData) {
     }
     toast.success("payment Successful, ypou are addded to the course");
 
-    const newWebsiteUrl = "https://ciscoxlpuigen.co.in/";
+    const newWebsiteUrl = "http://event.webacing.tech/";
     window.location.href = newWebsiteUrl;
     // dispatch(resetCart());
   } catch (error) {
