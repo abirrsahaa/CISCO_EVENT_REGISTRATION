@@ -20,7 +20,7 @@ const Registration1 = () => {
   // const [techtalkError, setTechtalkError] = useState(null);
 
   const navigate = useNavigate();
-  // const registration = "http://localhost:3000/register";
+  // const registration = "http://ciscobackend.webacing.tech:3000/register";
   const options = [
     {
       content: "Day-2 (Introduction to blockchain and Threat intelligence)",
@@ -59,7 +59,7 @@ const Registration1 = () => {
   }, []);
 
   // const checking_api = "https://cisco-payments.sabal.in/checking";
-  const checking_api = "http://localhost:3000/checking";
+  const checking_api = "http://ciscobackend.webacing.tech:3000/checking";
 
   return (
     <div className="w-[100vw] h-[1000px] md:h-[800px] md:[100vh] flex flex-col md:flex md:flex-row items-center justify-center overflow-hidden rounded-3xl">

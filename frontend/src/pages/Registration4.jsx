@@ -32,7 +32,7 @@ const Registration4 = () => {
   //   const [availed, setavailed] = useState(false);
 
   // const checking_api = "https://cisco-payments.sabal.in/checking";
-  const checking_api = "http://localhost:3000/checking";
+  const checking_api = "http://ciscobackend.webacing.tech:3000/checking";
   //   const submithandler = () => {
   //     const user = {
   //       fullname,

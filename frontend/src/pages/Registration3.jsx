@@ -52,7 +52,7 @@ const Registration3 = () => {
     console.log("the availed option is ", availed);
   }, [selected1, selected2, availed]);
   // const checking_api = "https://cisco-payments.sabal.in/checking";
-  const checking_api = "http://localhost:3000/checking";
+  const checking_api = "http://ciscobackend.webacing.tech:3000/checking";
   const submithandler = () => {
     const user = {
       fullname,
